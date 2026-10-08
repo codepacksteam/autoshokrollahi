@@ -1,0 +1,2756 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#F5F7FA">
+<title>پروپوزال پلتفرم هوشمند خودرو | اتومبیل صمد شکرالهی × Code Packs</title>
+<meta name="description" content="طراحی و توسعه پلتفرم هوشمند خرید، فروش، قیمت‌گذاری، کارشناسی و مدیریت مشتری خودرو با محوریت هوش مصنوعی — اتومبیل صمد شکرالهی">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   SAMAD SHOKROLLAHI AUTO × CODE PACKS
+   Brand Blue: #1E4FA0 | Accent Red: #E5252A
+   Default Theme: LIGHT ☀️
+   ============================================================ */
+:root {
+    --brand-blue: #1E4FA0;
+    --brand-blue-dark: #163D7A;
+    --brand-blue-deep: #0F2A54;
+    --brand-blue-soft: rgba(30, 79, 160, 0.07);
+    --brand-blue-glow: rgba(30, 79, 160, 0.18);
+    --brand-red: #E5252A;
+    --brand-red-dark: #C01B20;
+    --brand-red-soft: rgba(229, 37, 42, 0.07);
+    --brand-red-glow: rgba(229, 37, 42, 0.20);
+
+    --kavian-navy: var(--brand-blue);
+    --kavian-navy-dark: var(--brand-blue-dark);
+    --kavian-navy-deep: var(--brand-blue-deep);
+    --kavian-navy-soft: var(--brand-blue-soft);
+    --kavian-navy-glow: var(--brand-blue-glow);
+    --kavian-red: var(--brand-red);
+    --kavian-red-dark: var(--brand-red-dark);
+    --kavian-red-soft: var(--brand-red-soft);
+    --kavian-red-glow: var(--brand-red-glow);
+
+    --bg: #F5F7FA;
+    --surface: #FFFFFF;
+    --surface-2: #FAFBFD;
+    --surface-3: #EEF1F6;
+    --border: #E1E6EE;
+    --border-strong: #C5CDDB;
+    --divider: rgba(30, 79, 160, 0.06);
+
+    --text: #101828;
+    --text-2: #475467;
+    --text-3: #79879B;
+    --text-4: #9BA6B7;
+
+    --success: #2E7D5B;
+    --success-soft: #EBF5F0;
+
+    --shadow-xs: 0 1px 2px rgba(30, 79, 160, 0.05);
+    --shadow-sm: 0 2px 8px rgba(30, 79, 160, 0.07);
+    --shadow: 0 8px 24px rgba(30, 79, 160, 0.09);
+    --shadow-lg: 0 18px 48px rgba(30, 79, 160, 0.12);
+
+    --r-xs: 6px;
+    --r-sm: 10px;
+    --r-md: 14px;
+    --r-lg: 18px;
+    --r-xl: 22px;
+    --r-2xl: 28px;
+    --r-pill: 999px;
+
+    --header-h: 68px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --container-pad: 40px;
+}
+
+[data-theme="dark"] {
+    --brand-blue: #4A7BD4;
+    --brand-blue-dark: #6B96E0;
+    --brand-blue-deep: #0A1830;
+    --brand-blue-soft: rgba(74, 123, 212, 0.14);
+    --brand-blue-glow: rgba(74, 123, 212, 0.22);
+    --brand-red: #F0474C;
+    --brand-red-dark: #F56B6F;
+    --brand-red-soft: rgba(240, 71, 76, 0.14);
+    --brand-red-glow: rgba(240, 71, 76, 0.24);
+    --kavian-navy: #4A7BD4;
+    --kavian-navy-dark: #6B96E0;
+    --kavian-navy-deep: #0A1830;
+    --kavian-navy-soft: rgba(74, 123, 212, 0.14);
+    --kavian-navy-glow: rgba(74, 123, 212, 0.22);
+    --bg: #0A1220;
+    --surface: #101A2E;
+    --surface-2: #16213A;
+    --surface-3: #1E2C48;
+    --border: #243453;
+    --border-strong: #33476B;
+    --divider: rgba(255, 255, 255, 0.06);
+    --text: #EEF2F8;
+    --text-2: #B4C0D4;
+    --text-3: #7A88A2;
+    --text-4: #5A6780;
+    --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.4);
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.45);
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    --shadow-lg: 0 18px 48px rgba(0, 0, 0, 0.55);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: calc(var(--header-h) + 24px);
+    -webkit-text-size-adjust: 100%;
+    transition: background-color 0.4s var(--ease);
+}
+body {
+    font-family: "Vazirmatn", system-ui, -apple-system, "Segoe UI", Tahoma, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.85;
+    letter-spacing: -0.003em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    min-height: 100vh;
+    transition: background-color 0.4s var(--ease), color 0.4s var(--ease);
+    padding-bottom: env(safe-area-inset-bottom);
+}
+body.menu-open { overflow: hidden; }
+
+::selection { background: var(--brand-blue); color: #fff; }
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 10px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-thumb:hover { background: var(--text-4); }
+
+a { color: inherit; text-decoration: none; }
+button { font-family: inherit; border: 0; cursor: pointer; background: none; color: inherit; -webkit-tap-highlight-color: transparent; }
+img, svg { max-width: 100%; display: block; }
+ul { list-style: none; }
+
+.container { width: min(1180px, calc(100% - var(--container-pad))); margin: 0 auto; position: relative; z-index: 2; }
+
+/* ============ HEADER ============ */
+.site-header {
+    position: sticky; top: 0; z-index: 1000;
+    height: var(--header-h);
+    background: var(--bg);
+    border-bottom: 1px solid transparent;
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    transition: background 0.35s var(--ease), border-color 0.3s var(--ease);
+}
+.site-header.scrolled {
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    border-bottom-color: var(--divider);
+}
+.header-inner {
+    width: min(1220px, calc(100% - 40px)); height: 100%; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between; gap: 16px;
+}
+.logo { display: inline-flex; align-items: center; gap: 12px; color: var(--text); transition: opacity 0.25s; }
+.logo:hover { opacity: 0.85; }
+.logo-mark { position: relative; width: 42px; height: 42px; flex-shrink: 0; }
+.logo-mark svg { width: 100%; height: 100%; display: block; }
+.logo-text { display: inline-flex; flex-direction: column; line-height: 1.2; }
+.logo-text .cn { font-size: 0.92rem; font-weight: 800; color: var(--text); letter-spacing: -0.01em; }
+.logo-text .tag { font-size: 0.58rem; font-weight: 500; color: var(--text-3); letter-spacing: 0.05em; direction: ltr; text-align: right; margin-top: 2px; }
+.header-actions { display: flex; align-items: center; gap: 8px; }
+
+.theme-toggle {
+    width: 40px; height: 40px; display: inline-grid; place-items: center;
+    border-radius: var(--r-sm); background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-2); transition: all 0.25s var(--ease);
+}
+.theme-toggle:hover { color: var(--brand-blue); border-color: var(--brand-blue); background: var(--brand-blue-soft); }
+.theme-toggle svg { width: 16px; height: 16px; }
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+.menu-button {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 10px 18px; border-radius: var(--r-pill);
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-2); font-size: 0.8rem; font-weight: 600;
+    transition: all 0.25s var(--ease);
+}
+.menu-button:hover { color: var(--brand-blue); border-color: var(--brand-blue); background: var(--brand-blue-soft); }
+.menu-button svg { width: 14px; height: 14px; }
+
+.hamburger {
+    display: none; width: 40px; height: 40px;
+    flex-direction: column; align-items: center; justify-content: center; gap: 4px;
+    border-radius: var(--r-sm); background: var(--surface); border: 1px solid var(--border);
+    transition: all 0.25s var(--ease);
+}
+.hamburger span { width: 18px; height: 2px; background: var(--text); border-radius: 2px; transition: all 0.3s var(--ease); }
+.hamburger.active span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ============ MOBILE OVERLAY ============ */
+.mobile-overlay {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(10, 18, 32, 0.6);
+    backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    opacity: 0; visibility: hidden; pointer-events: none;
+    transition: opacity 0.35s var(--ease), visibility 0.35s;
+}
+.mobile-overlay.active { opacity: 1; visibility: visible; pointer-events: auto; }
+.mobile-panel {
+    position: absolute; top: 0; right: 0;
+    width: min(360px, 92vw); height: 100%;
+    padding: 84px 20px calc(30px + env(safe-area-inset-bottom));
+    overflow-y: auto; background: var(--surface);
+    border-left: 1px solid var(--border);
+    box-shadow: -24px 0 60px rgba(0, 0, 0, 0.2);
+    transform: translateX(105%); transition: transform 0.45s var(--ease);
+}
+.mobile-overlay.active .mobile-panel { transform: translateX(0); }
+.mobile-panel-title { color: var(--text-4); font-size: 0.62rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; margin: 0 10px 14px; }
+.mobile-panel a {
+    display: flex; align-items: center; gap: 12px;
+    padding: 11px 13px; margin-bottom: 2px; border-radius: var(--r-sm);
+    color: var(--text-2); font-size: 0.84rem; font-weight: 600;
+    transition: all 0.2s var(--ease);
+}
+.mobile-panel a:hover, .mobile-panel a.active { background: var(--brand-blue-soft); color: var(--brand-blue); }
+.mobile-num {
+    width: 26px; height: 26px; flex: 0 0 auto;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: var(--r-xs); background: var(--surface-3); color: var(--text-3);
+    font-size: 0.62rem; font-weight: 800; transition: all 0.2s var(--ease);
+}
+.mobile-panel a:hover .mobile-num, .mobile-panel a.active .mobile-num { background: var(--brand-blue); color: #fff; }
+.mobile-panel a.cp-link .mobile-num { background: linear-gradient(135deg, var(--brand-blue-deep), var(--brand-red)); color: #fff; }
+.mobile-panel a.visual-link .mobile-num, .mobile-panel a.ai-link .mobile-num { background: linear-gradient(135deg, var(--brand-red), var(--brand-blue)); color: #fff; }
+
+/* ============ HERO ============ */
+.hero {
+    position: relative; margin: 32px auto 40px;
+    border-radius: var(--r-2xl); padding: 80px 40px 70px;
+    min-height: 620px; display: grid; place-items: center;
+    overflow: hidden; background: var(--surface);
+    border: 1px solid var(--border); box-shadow: var(--shadow-lg);
+}
+.hero::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(ellipse 700px 400px at 100% 0%, var(--brand-blue-soft), transparent 60%),
+        radial-gradient(ellipse 600px 400px at 0% 100%, var(--brand-red-soft), transparent 60%);
+    z-index: 0; pointer-events: none;
+}
+.hero::after {
+    content: ""; position: absolute; inset: 0;
+    background-image:
+        linear-gradient(to right, var(--divider) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--divider) 1px, transparent 1px);
+    background-size: 64px 64px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 45%, black, transparent);
+    mask-image: radial-gradient(ellipse 60% 50% at 50% 45%, black, transparent);
+    z-index: 0; pointer-events: none;
+}
+.hero-content { position: relative; z-index: 2; max-width: 880px; margin: auto; text-align: center; }
+
+.hero-kavian-brand {
+    display: inline-flex; flex-direction: column; align-items: center; gap: 14px;
+    padding: 26px 48px 22px; margin-bottom: 34px;
+    border-radius: var(--r-2xl);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(250, 251, 253, 0.94));
+    border: 2px solid transparent; background-clip: padding-box; position: relative;
+    box-shadow: 0 12px 40px var(--brand-blue-glow), 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.4s var(--ease);
+}
+[data-theme="dark"] .hero-kavian-brand { background: linear-gradient(135deg, rgba(16, 26, 46, 0.94), rgba(22, 33, 58, 0.94)); }
+.hero-kavian-brand::before {
+    content: ""; position: absolute; inset: -2px; border-radius: var(--r-2xl);
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-red), var(--brand-blue));
+    background-size: 200% 200%; z-index: -1; animation: brandBorderShift 8s ease-in-out infinite;
+}
+@keyframes brandBorderShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+.hero-kavian-brand:hover { transform: translateY(-3px); box-shadow: 0 18px 52px var(--brand-blue-glow), 0 2px 8px rgba(0, 0, 0, 0.05); }
+.hero-kavian-brand .kavian-logo-svg { width: 88px; height: 88px; flex-shrink: 0; filter: drop-shadow(0 6px 16px var(--brand-blue-glow)); }
+.hero-kavian-brand .kavian-name { font-size: 1.85rem; font-weight: 900; color: var(--brand-blue); letter-spacing: -0.03em; line-height: 1.1; display: block; }
+[data-theme="dark"] .hero-kavian-brand .kavian-name { color: #8FB4E8; }
+.hero-kavian-brand .kavian-tagline {
+    display: block; font-size: 0.82rem; font-weight: 800; color: var(--brand-red);
+    letter-spacing: 0.28em; direction: ltr; margin-top: 6px; padding-top: 10px;
+    border-top: 1px solid rgba(229, 37, 42, 0.2); position: relative;
+}
+.hero-kavian-brand .kavian-tagline::before {
+    content: ""; position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    width: 40px; height: 2px; background: linear-gradient(90deg, transparent, var(--brand-red), transparent);
+}
+[data-theme="dark"] .hero-kavian-brand .kavian-tagline { color: #F56B6F; }
+
+.hero h1 { font-size: clamp(1.9rem, 5.4vw, 3.5rem); line-height: 1.24; font-weight: 900; letter-spacing: -0.032em; margin-bottom: 22px; color: var(--text); }
+.hero h1 .accent { color: var(--brand-blue); position: relative; display: inline-block; }
+[data-theme="dark"] .hero h1 .accent { color: #8FB4E8; }
+.hero h1 .accent::after {
+    content: ""; position: absolute; left: 0; right: 0; bottom: -3px; height: 3px;
+    background: linear-gradient(90deg, var(--brand-blue), var(--brand-red));
+    opacity: 0.35; border-radius: 3px;
+}
+.hero-description { max-width: 780px; margin: 0 auto; color: var(--text-2); font-size: 0.98rem; line-height: 2; }
+.hero-description strong { color: var(--brand-blue); font-weight: 700; }
+[data-theme="dark"] .hero-description strong { color: #8FB4E8; }
+.hero-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 32px; }
+.hero-chip {
+    display: inline-flex; align-items: center;
+    padding: 8px 16px; border-radius: var(--r-pill);
+    font-size: 0.7rem; font-weight: 600; color: var(--text-2);
+    background: var(--surface-2); border: 1px solid var(--border);
+    transition: all 0.25s var(--ease); cursor: default;
+}
+@media (hover: hover) {
+    .hero-chip:hover { color: var(--brand-blue); border-color: var(--brand-blue); background: var(--brand-blue-soft); }
+}
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; max-width: 820px; margin: 40px auto 0; }
+.hero-stat {
+    padding: 20px 14px; border-radius: var(--r-md); text-align: center;
+    background: var(--surface-2); border: 1px solid var(--border);
+    transition: all 0.3s var(--ease);
+}
+.hero-stat:hover { border-color: var(--brand-blue); background: var(--surface); }
+.hero-stat strong { display: block; color: var(--brand-blue); font-size: 1rem; font-weight: 800; margin-bottom: 4px; letter-spacing: -0.005em; }
+[data-theme="dark"] .hero-stat strong { color: #8FB4E8; }
+.hero-stat span { color: var(--text-3); font-size: 0.68rem; font-weight: 500; line-height: 1.5; }
+
+/* ============ TOC ============ */
+.toc {
+    position: relative; padding: 24px 26px; margin-bottom: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-lg); box-shadow: var(--shadow-xs);
+    transition: all 0.3s var(--ease);
+}
+.toc-header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; user-select: none; gap: 12px; }
+.toc-title { display: flex; align-items: center; gap: 12px; color: var(--text); font-size: 0.94rem; font-weight: 700; }
+.toc-title-icon {
+    width: 32px; height: 32px; display: grid; place-items: center;
+    border-radius: var(--r-xs); background: var(--brand-blue-soft); color: var(--brand-blue);
+}
+.toc-title-icon svg { width: 16px; height: 16px; }
+.toc-arrow { color: var(--text-3); transition: transform 0.3s var(--ease); font-size: 0.8rem; }
+.toc.collapsed .toc-arrow { transform: rotate(-90deg); }
+.toc.collapsed .toc-links { display: none; }
+.toc-links {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 4px; margin-top: 18px; padding-top: 18px;
+    border-top: 1px solid var(--divider);
+}
+.toc-links a {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 11px; border-radius: var(--r-xs);
+    color: var(--text-2); font-size: 0.78rem; font-weight: 500;
+    transition: all 0.2s var(--ease); border: 1px solid transparent;
+}
+.toc-links a:hover, .toc-links a.active { color: var(--brand-blue); background: var(--brand-blue-soft); }
+.toc-num {
+    width: 24px; height: 24px; flex: 0 0 auto;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: var(--r-xs); background: var(--surface-3); color: var(--text-3);
+    font-size: 0.6rem; font-weight: 800; transition: all 0.2s var(--ease);
+}
+.toc-links a:hover .toc-num, .toc-links a.active .toc-num { background: var(--brand-blue); color: #fff; }
+.toc-links a.cp-link .toc-num { background: linear-gradient(135deg, var(--brand-blue-deep), var(--brand-red)); color: #fff; }
+.toc-links a.visual-link .toc-num, .toc-links a.ai-link .toc-num { background: linear-gradient(135deg, var(--brand-red), var(--brand-blue)); color: #fff; }
+
+/* ============ SECTIONS ============ */
+.section {
+    position: relative; margin-bottom: 20px; padding: 42px 38px;
+    border-radius: var(--r-xl); background: var(--surface);
+    border: 1px solid var(--border); box-shadow: var(--shadow-xs);
+    opacity: 0; transform: translateY(24px);
+    transition: opacity 0.6s var(--ease), transform 0.6s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+    overflow: hidden;
+}
+.section.visible { opacity: 1; transform: translateY(0); }
+.section:hover { border-color: var(--border-strong); box-shadow: var(--shadow-sm); }
+.section-head {
+    display: flex; align-items: center; gap: 16px;
+    margin-bottom: 24px; padding-bottom: 18px;
+    border-bottom: 1px solid var(--divider);
+}
+.section-icon {
+    width: 44px; height: 44px; flex: 0 0 auto;
+    display: grid; place-items: center; border-radius: var(--r-sm);
+    font-size: 0.92rem; font-weight: 800;
+    color: var(--brand-blue); background: var(--brand-blue-soft);
+    border: 1px solid transparent; transition: all 0.3s var(--ease);
+}
+.section:hover .section-icon { background: var(--brand-blue); color: #fff; }
+.section-head-content { flex: 1; min-width: 0; }
+.section-title { color: var(--text); font-size: 1.32rem; line-height: 1.4; font-weight: 800; letter-spacing: -0.015em; margin-bottom: 2px; }
+.section-subtitle { color: var(--text-3); font-size: 0.74rem; font-weight: 500; }
+.section h3 { color: var(--text); margin: 30px 0 14px; font-size: 1rem; font-weight: 800; letter-spacing: -0.008em; }
+.section p { color: var(--text-2); margin-bottom: 14px; line-height: 1.95; font-size: 0.9rem; }
+.section p strong { color: var(--text); font-weight: 700; }
+.section ul { margin: 12px 0 18px; padding-right: 4px; color: var(--text-2); }
+.section ul li { position: relative; padding-right: 22px; margin-bottom: 10px; font-size: 0.9rem; line-height: 1.85; }
+.section ul li::before {
+    content: ""; position: absolute; right: 4px; top: 12px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--brand-red); opacity: 0.6;
+}
+
+/* ============ HIGHLIGHTS & INFO BOXES ============ */
+.highlight {
+    position: relative; padding: 22px 24px; margin: 18px 0 22px;
+    border-radius: var(--r-md); color: var(--text-2);
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-right: 3px solid var(--brand-blue);
+    font-size: 0.88rem; line-height: 1.9;
+    transition: background 0.3s var(--ease);
+}
+.highlight:hover { background: var(--brand-blue-soft); }
+.highlight strong { color: var(--text); font-weight: 700; }
+.highlight strong:first-child { color: var(--brand-blue); }
+[data-theme="dark"] .highlight strong:first-child { color: #8FB4E8; }
+.highlight.highlight-red { border-right-color: var(--brand-red); }
+.highlight.highlight-red strong:first-child { color: var(--brand-red); }
+
+.info-box {
+    padding: 16px 20px; margin: 16px 0; border-radius: var(--r-md);
+    font-size: 0.85rem; line-height: 1.85; font-weight: 500;
+    color: var(--text-2); background: var(--surface-2);
+    border: 1px solid var(--border); border-right: 3px solid var(--brand-blue);
+}
+.info-box strong { color: var(--text); font-weight: 700; }
+.info-box.info-green { border-right-color: var(--success); }
+.info-box.info-red { border-right-color: var(--brand-red); }
+
+/* ============ CARDS — ACCORDION ============ */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 20px 0; }
+.card {
+    position: relative; padding: 20px 22px; border-radius: var(--r-md);
+    background: var(--surface-2); border: 1px solid var(--border);
+    transition: all 0.35s var(--ease); cursor: pointer; user-select: none;
+    overflow: hidden; -webkit-tap-highlight-color: transparent; outline: none;
+}
+.card:hover { background: var(--surface); border-color: var(--brand-blue); box-shadow: var(--shadow-sm); }
+.card:focus-visible { border-color: var(--brand-blue); box-shadow: 0 0 0 3px var(--brand-blue-soft); }
+.card.expanded { background: var(--surface); border-color: var(--brand-blue); box-shadow: var(--shadow-sm); }
+.card h4 {
+    color: var(--text); font-size: 0.92rem; font-weight: 700; margin: 0;
+    letter-spacing: -0.008em; display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; transition: color 0.3s var(--ease); line-height: 1.5;
+}
+.card:hover h4 { color: var(--brand-blue); }
+.card.expanded h4 { color: var(--brand-blue); }
+.card h4::after {
+    content: ""; width: 7px; height: 7px;
+    border-right: 2px solid var(--text-3); border-bottom: 2px solid var(--text-3);
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform 0.4s var(--ease), border-color 0.3s var(--ease), margin 0.3s var(--ease);
+    flex-shrink: 0; border-radius: 0 0 2px 0; margin-top: -4px; margin-left: 2px;
+}
+.card:hover h4::after { border-color: var(--brand-blue); }
+.card.expanded h4::after { transform: rotate(-135deg) translate(-2px, -2px); border-color: var(--brand-blue); margin-top: 4px; }
+.card p {
+    font-size: 0.8rem; line-height: 1.85; margin: 0; color: var(--text-2);
+    max-height: 0; opacity: 0; overflow: hidden; transform: translateY(-6px);
+    transition: max-height 0.6s var(--ease), opacity 0.35s var(--ease), transform 0.4s var(--ease), margin-top 0.35s var(--ease);
+}
+.card.expanded p { max-height: 700px; opacity: 1; transform: translateY(0); margin-top: 12px; }
+
+/* ============ BOT SERVICE ============ */
+.bot-service {
+    position: relative; padding: 32px; border-radius: var(--r-lg);
+    background: var(--surface-2); border: 1px solid var(--border);
+    border-right: 3px solid var(--brand-blue);
+}
+.bot-service-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+.bot-service-title span {
+    display: inline-flex; align-items: center; padding: 5px 12px; margin-bottom: 12px;
+    border-radius: var(--r-pill); font-size: 0.62rem; font-weight: 700;
+    background: var(--brand-blue-soft); color: var(--brand-blue); letter-spacing: 0.03em;
+}
+.bot-service h3 { color: var(--text); margin: 0; font-size: 1.25rem; font-weight: 800; letter-spacing: -0.015em; }
+.bot-service > p { max-width: 900px; margin-top: 18px; color: var(--text-2); font-size: 0.86rem; line-height: 1.9; }
+.bot-service > p strong { color: var(--text); font-weight: 700; }
+.bot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 22px; }
+.bot-item {
+    padding: 16px 18px; border-radius: var(--r-sm);
+    background: var(--surface); border: 1px solid var(--border);
+    transition: all 0.25s var(--ease);
+}
+.bot-item:hover { border-color: var(--brand-blue); background: var(--brand-blue-soft); }
+.bot-item strong { display: block; color: var(--text); font-size: 0.78rem; font-weight: 700; margin-bottom: 6px; }
+.bot-item p { color: var(--text-3); font-size: 0.68rem; line-height: 1.75; margin: 0; }
+.bot-goal {
+    margin-top: 18px; padding: 15px 20px; border-radius: var(--r-sm);
+    background: var(--surface); border: 1px solid var(--border);
+    border-right: 3px solid var(--brand-red); color: var(--text-2);
+    font-size: 0.82rem; line-height: 1.85; font-weight: 500;
+}
+.bot-goal strong { color: var(--brand-red); font-weight: 700; }
+
+/* ============ CRM FLOW ============ */
+.crm-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 22px 0; }
+.crm-step {
+    position: relative; padding: 22px 16px; text-align: center;
+    border-radius: var(--r-md); background: var(--surface-2);
+    border: 1px solid var(--border); transition: all 0.3s var(--ease);
+}
+.crm-step:hover { border-color: var(--brand-blue); background: var(--surface); }
+.crm-step:not(:last-child)::after {
+    content: ""; position: absolute; left: -13px; top: 50%; transform: translateY(-50%);
+    z-index: 2; width: 22px; height: 22px; display: grid; place-items: center;
+    border-radius: 50%; background: var(--surface); border: 1px solid var(--border);
+}
+.crm-step:not(:last-child)::before {
+    content: ""; position: absolute; left: -20px; top: 50%;
+    width: 6px; height: 6px;
+    border-top: 1.5px solid var(--text-3); border-left: 1.5px solid var(--text-3);
+    transform: translateY(-50%) rotate(-45deg); z-index: 3;
+}
+.crm-step-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border-radius: var(--r-xs);
+    background: var(--brand-blue-soft); color: var(--brand-blue);
+    font-size: 0.7rem; font-weight: 800; margin-bottom: 10px;
+}
+.crm-step strong { display: block; color: var(--text); font-size: 0.82rem; font-weight: 700; margin-bottom: 6px; }
+.crm-step p { margin: 0; color: var(--text-3); font-size: 0.68rem; line-height: 1.7; }
+
+/* ============ PRICING SECTION ============ */
+.section.pricing-showcase {
+    position: relative; padding: 56px 40px 48px;
+    background: linear-gradient(135deg, #FDF5F6 0%, #FBEDEF 40%, #F8EEF1 70%, #FBF4F6 100%);
+    border: 1px solid rgba(229, 37, 42, 0.18); overflow: hidden; isolation: isolate;
+    box-shadow: 0 22px 60px rgba(229, 37, 42, 0.08);
+}
+[data-theme="dark"] .section.pricing-showcase {
+    background: linear-gradient(135deg, #1A0E12 0%, #211318 30%, #251621 60%, #1B1014 100%);
+    border-color: rgba(240, 71, 76, 0.25); box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+.section.pricing-showcase::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(-45deg, transparent 0, transparent 28px, rgba(229, 37, 42, 0.045) 28px, rgba(229, 37, 42, 0.045) 29px);
+    z-index: 0; pointer-events: none;
+}
+.section.pricing-showcase::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(229, 37, 42, 0.10), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(30, 79, 160, 0.08), transparent 50%);
+    z-index: 0; pointer-events: none;
+}
+.section.pricing-showcase:hover { border-color: rgba(229, 37, 42, 0.38); box-shadow: 0 28px 75px rgba(229, 37, 42, 0.14); }
+.section.pricing-showcase > * { position: relative; z-index: 2; }
+.section.pricing-showcase .section-icon {
+    background: linear-gradient(135deg, rgba(229, 37, 42, 0.14), rgba(229, 37, 42, 0.08));
+    color: var(--brand-red); border: 1px solid rgba(229, 37, 42, 0.22);
+}
+.section.pricing-showcase:hover .section-icon { background: linear-gradient(135deg, var(--brand-red), var(--brand-blue)); color: #fff; border-color: transparent; }
+.section.pricing-showcase .section-head { border-bottom-color: rgba(229, 37, 42, 0.15); }
+.section.pricing-showcase .highlight {
+    background: rgba(255, 255, 255, 0.65); border-color: rgba(229, 37, 42, 0.15);
+    border-right-color: var(--brand-red); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.section.pricing-showcase .highlight strong:first-child { color: var(--brand-red); }
+.section.pricing-showcase .card {
+    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(229, 37, 42, 0.14);
+}
+.section.pricing-showcase .card:hover, .section.pricing-showcase .card.expanded {
+    background: rgba(255, 255, 255, 0.94); border-color: var(--brand-red);
+    box-shadow: 0 12px 32px rgba(229, 37, 42, 0.12);
+}
+.section.pricing-showcase .card:hover h4, .section.pricing-showcase .card.expanded h4 { color: var(--brand-red); }
+.section.pricing-showcase .card:hover h4::after, .section.pricing-showcase .card.expanded h4::after { border-color: var(--brand-red); }
+
+.visual-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 7px 18px; margin-bottom: 20px; border-radius: var(--r-pill);
+    background: linear-gradient(135deg, rgba(229, 37, 42, 0.12), rgba(229, 37, 42, 0.06));
+    border: 1px solid rgba(229, 37, 42, 0.28); color: var(--brand-red-dark);
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em;
+    position: relative; z-index: 3;
+    box-shadow: 0 6px 20px rgba(229, 37, 42, 0.1);
+}
+.visual-badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--brand-red);
+    box-shadow: 0 0 0 0 rgba(229, 37, 42, 0.5);
+    animation: visualPulse 2s ease-in-out infinite;
+}
+@keyframes visualPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(229, 37, 42, 0.6); } 50% { box-shadow: 0 0 0 9px rgba(229, 37, 42, 0); } }
+.visual-watermark {
+    position: absolute; top: 45%; left: 50%; transform: translate(-50%, -50%) rotate(-10deg);
+    font-family: "Vazirmatn", sans-serif; font-size: clamp(3.5rem, 11vw, 8.5rem);
+    font-weight: 900; letter-spacing: 0.14em; color: rgba(229, 37, 42, 0.05);
+    white-space: nowrap; pointer-events: none; user-select: none;
+    direction: ltr; z-index: 1; line-height: 1; text-align: center;
+}
+.visual-watermark span { display: block; font-size: 0.3em; letter-spacing: 0.42em; margin-top: 12px; opacity: 0.75; }
+
+/* ============ AI AGENTIC SECTION ============ */
+.section.agentic-showcase {
+    position: relative; padding: 56px 40px 48px;
+    background: linear-gradient(135deg, #F0F4FB 0%, #ECF1FA 40%, #F1F4FC 70%, #F4F7FD 100%);
+    border: 1px solid rgba(30, 79, 160, 0.22); overflow: hidden; isolation: isolate;
+    box-shadow: 0 22px 60px rgba(30, 79, 160, 0.10);
+}
+[data-theme="dark"] .section.agentic-showcase {
+    background: linear-gradient(135deg, #0A1428 0%, #0E1A33 30%, #122042 60%, #081120 100%);
+    border-color: rgba(74, 123, 212, 0.3); box-shadow: 0 22px 60px rgba(0, 0, 0, 0.5);
+}
+.section.agentic-showcase::before {
+    content: ""; position: absolute; inset: 0;
+    background-image: repeating-linear-gradient(45deg, transparent 0, transparent 26px, rgba(30, 79, 160, 0.05) 26px, rgba(30, 79, 160, 0.05) 27px);
+    z-index: 0; pointer-events: none;
+}
+.section.agentic-showcase::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(30, 79, 160, 0.10), transparent 45%),
+        radial-gradient(circle at 100% 100%, rgba(229, 37, 42, 0.06), transparent 50%);
+    z-index: 0; pointer-events: none;
+}
+.section.agentic-showcase:hover { border-color: rgba(30, 79, 160, 0.42); box-shadow: 0 28px 75px rgba(30, 79, 160, 0.16); }
+.section.agentic-showcase > .agentic-content { position: relative; z-index: 3; }
+.agentic-watermark {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg);
+    font-family: "Vazirmatn", sans-serif; font-size: clamp(4.5rem, 14vw, 11rem);
+    font-weight: 900; letter-spacing: 0.12em; color: rgba(30, 79, 160, 0.06);
+    white-space: nowrap; pointer-events: none; user-select: none;
+    direction: ltr; z-index: 1; line-height: 1; text-align: center;
+}
+.agentic-watermark span { display: block; font-size: 0.32em; letter-spacing: 0.4em; margin-top: 12px; opacity: 0.7; }
+.agentic-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 7px 18px; margin-bottom: 20px; border-radius: var(--r-pill);
+    background: linear-gradient(135deg, rgba(30, 79, 160, 0.14), rgba(30, 79, 160, 0.08));
+    border: 1px solid rgba(30, 79, 160, 0.35); color: var(--brand-blue-dark);
+    font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em;
+    position: relative; z-index: 3;
+    box-shadow: 0 6px 20px rgba(30, 79, 160, 0.12);
+}
+.agentic-badge-dot {
+    width: 7px; height: 7px; border-radius: 50%;
+    background: var(--brand-blue);
+    box-shadow: 0 0 0 0 rgba(30, 79, 160, 0.5);
+    animation: agenticPulse 2s ease-in-out infinite;
+}
+@keyframes agenticPulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(30, 79, 160, 0.6); } 50% { box-shadow: 0 0 0 9px rgba(30, 79, 160, 0); } }
+.section.agentic-showcase .section-icon {
+    background: linear-gradient(135deg, rgba(30, 79, 160, 0.14), rgba(30, 79, 160, 0.08));
+    color: var(--brand-blue); border: 1px solid rgba(30, 79, 160, 0.25);
+}
+.section.agentic-showcase:hover .section-icon { background: linear-gradient(135deg, var(--brand-blue), var(--brand-red)); color: #fff; border-color: transparent; }
+.section.agentic-showcase .section-head { border-bottom-color: rgba(30, 79, 160, 0.2); }
+.section.agentic-showcase .highlight {
+    background: rgba(255, 255, 255, 0.6); border-color: rgba(30, 79, 160, 0.2);
+    border-right-color: var(--brand-blue); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+}
+.section.agentic-showcase .highlight strong:first-child { color: var(--brand-blue); }
+.section.agentic-showcase .card {
+    background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border-color: rgba(30, 79, 160, 0.18);
+}
+.section.agentic-showcase .card:hover, .section.agentic-showcase .card.expanded {
+    background: rgba(255, 255, 255, 0.94); border-color: var(--brand-blue);
+    box-shadow: 0 12px 32px rgba(30, 79, 160, 0.12);
+}
+.section.agentic-showcase .card:hover h4, .section.agentic-showcase .card.expanded h4 { color: var(--brand-blue); }
+.section.agentic-showcase .card:hover h4::after, .section.agentic-showcase .card.expanded h4::after { border-color: var(--brand-blue); }
+.section.agentic-showcase .card p { color: var(--text-2); font-size: 0.78rem; line-height: 1.95; }
+
+/* ============ LIVE AI CHAT ============ */
+.ai-live-showcase {
+    position: relative; overflow: hidden; margin: 26px 0 22px;
+    border-radius: var(--r-xl);
+    background: linear-gradient(135deg, var(--surface) 0%, var(--surface-2) 45%, var(--surface-3) 100%);
+    box-shadow: 0 22px 55px rgba(30, 79, 160, 0.10);
+    border: 1px solid var(--border);
+}
+.ai-live-showcase::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(circle at 100% 0%, rgba(229, 37, 42, 0.08), transparent 45%),
+        radial-gradient(circle at 0% 100%, rgba(30, 79, 160, 0.08), transparent 50%);
+    pointer-events: none; z-index: 0;
+}
+.ai-live-showcase-inner {
+    position: relative; z-index: 1;
+    display: grid; grid-template-columns: 1fr; gap: 22px;
+    padding: clamp(20px, 3.5vw, 38px) clamp(16px, 3vw, 36px);
+}
+.eyebrow-ai {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 14px; margin-bottom: 12px; width: fit-content;
+    border-radius: var(--r-pill); background: var(--brand-red-soft);
+    border: 1px solid rgba(229, 37, 42, 0.3); color: var(--brand-red-dark);
+    font-size: 0.72rem; font-weight: 800; letter-spacing: 0.04em;
+}
+.eyebrow-ai-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--brand-red); box-shadow: 0 0 10px var(--brand-red);
+    animation: aiDotPulse 2s ease-in-out infinite;
+}
+@keyframes aiDotPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+.ai-live-content h3 { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; letter-spacing: -0.015em; line-height: 1.5; color: var(--text); }
+.ai-live-content h3 span { color: var(--brand-blue); }
+.ai-live-content p { margin: 0 0 12px; color: var(--text-2); font-size: 0.87rem; line-height: 1.95; }
+.ai-live-content p strong { color: var(--brand-blue); font-weight: 700; }
+.ai-features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 6px; margin-top: 16px; }
+.ai-feature {
+    padding: 10px 12px; border-radius: var(--r-sm);
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-2); font-size: 0.72rem; line-height: 1.6; font-weight: 600;
+    transition: all 0.3s var(--ease); display: flex; align-items: center; gap: 8px;
+}
+@media (hover: hover) {
+    .ai-feature:hover { background: var(--brand-blue-soft); border-color: var(--brand-blue); color: var(--brand-blue); transform: translateY(-2px); }
+}
+.ai-feature em { font-style: normal; flex-shrink: 0; font-size: 0.9rem; }
+
+.chat-window {
+    align-self: center; padding: clamp(12px, 2vw, 16px);
+    border-radius: var(--r-lg); background: var(--surface);
+    box-shadow: 0 22px 55px rgba(30, 79, 160, 0.12);
+    border: 1px solid var(--border); position: relative;
+    width: 100%; max-width: 100%; margin: 0 auto;
+}
+.chat-window::before {
+    content: ""; position: absolute; top: -1px; right: 20px; left: 20px;
+    height: 2px; background: linear-gradient(90deg, transparent, var(--brand-red), var(--brand-blue), transparent);
+    border-radius: 2px;
+}
+.chat-head { display: flex; align-items: center; gap: 10px; padding: 4px 4px 12px; border-bottom: 1px solid var(--divider); }
+.chat-avatar {
+    width: clamp(34px, 4vw, 42px); height: clamp(34px, 4vw, 42px);
+    display: grid; place-items: center; border-radius: 50%; color: #fff;
+    font-size: clamp(0.9rem, 2vw, 1.05rem); font-weight: 900;
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-red));
+    box-shadow: 0 6px 18px var(--brand-blue-glow); flex-shrink: 0;
+}
+.chat-head strong { display: block; font-size: 0.82rem; color: var(--text); font-weight: 800; }
+.chat-head small {
+    color: var(--success); font-size: 0.62rem; font-weight: 600;
+    display: inline-flex; align-items: center; gap: 4px; margin-top: 2px;
+}
+.chat-head small::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--success); box-shadow: 0 0 8px rgba(46, 125, 91, 0.6);
+    animation: pulseOnline 2s ease-in-out infinite;
+}
+@keyframes pulseOnline { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.2); } }
+.chat-body { padding: 4px 0 2px; max-height: min(560px, 65vh); overflow-y: auto; -webkit-overflow-scrolling: touch; scrollbar-width: thin; }
+.bubble {
+    width: fit-content; max-width: 92%; padding: 10px 13px;
+    margin-top: 9px; border-radius: 13px; font-size: 0.78rem; line-height: 1.75;
+    animation: bubbleIn 0.4s var(--ease) both; position: relative;
+}
+@keyframes bubbleIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+.bubble.ai { background: var(--brand-blue-soft); color: var(--text-2); border-bottom-right-radius: 4px; border: 1px solid rgba(30, 79, 160, 0.1); }
+.bubble.ai strong { color: var(--brand-blue); font-weight: 700; }
+.bubble.user { margin-right: auto; background: linear-gradient(135deg, var(--brand-blue), var(--brand-blue-dark)); color: #fff; border-bottom-left-radius: 4px; }
+.bubble.ai .price-mini {
+    display: block; margin-top: 8px; padding: 10px 12px;
+    border-radius: var(--r-sm); background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(229, 37, 42, 0.2); border-right: 3px solid var(--brand-red);
+    font-size: 0.72rem; line-height: 1.7;
+}
+.price-mini-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; padding: 3px 0; }
+.price-mini-row + .price-mini-row { border-top: 1px dashed rgba(229, 37, 42, 0.12); margin-top: 3px; padding-top: 5px; }
+.price-mini-label { color: var(--text-3); font-size: 0.68rem; font-weight: 600; }
+.price-mini-value { color: var(--brand-red); font-size: 0.76rem; font-weight: 800; }
+.price-mini-value.navy { color: var(--brand-blue); }
+.car-suggest { display: grid; grid-template-columns: 1fr; gap: 6px; margin-top: 9px; }
+.car-card-mini {
+    padding: 9px 11px; border-radius: var(--r-sm);
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(30, 79, 160, 0.15);
+    display: flex; justify-content: space-between; align-items: center; gap: 8px;
+    transition: all 0.25s var(--ease);
+}
+.car-card-mini:hover { border-color: var(--brand-blue); transform: translateX(-2px); }
+.car-card-mini strong { font-size: 0.72rem; color: var(--text) !important; font-weight: 800 !important; display: block; }
+.car-card-mini span { font-size: 0.62rem; color: var(--text-3); display: block; margin-top: 2px; }
+.car-card-mini em { font-style: normal; font-size: 0.68rem; font-weight: 800; color: var(--brand-red); white-space: nowrap; flex-shrink: 0; }
+.bubble-badge {
+    display: inline-flex; align-items: center;
+    padding: 2px 8px; border-radius: var(--r-pill);
+    font-size: 0.58rem; font-weight: 800;
+    background: var(--brand-red-soft); color: var(--brand-red-dark);
+    border: 1px solid rgba(229, 37, 42, 0.3);
+    margin-right: 4px; vertical-align: middle;
+}
+.bubble-badge.navy { background: var(--brand-blue-soft); color: var(--brand-blue); border-color: rgba(30, 79, 160, 0.3); }
+.bubble-badge.green { background: var(--success-soft); color: var(--success); border-color: rgba(46, 125, 91, 0.3); }
+.typing { display: flex; gap: 4px; margin-top: 10px; padding-right: 8px; align-items: center; }
+.typing::before { content: "AI در حال تایپ..."; font-size: 0.62rem; color: var(--text-3); margin-left: 8px; font-weight: 600; }
+.typing span { width: 6px; height: 6px; border-radius: 50%; background: var(--brand-red); animation: typing 0.9s infinite alternate; }
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typing { from { opacity: .25; transform: translateY(0); } to { opacity: 1; transform: translateY(-4px); } }
+.chat-footer {
+    padding: 10px 4px 2px; margin-top: 6px; border-top: 1px solid var(--divider);
+    display: flex; align-items: center; gap: 6px; color: var(--text-4);
+    font-size: 0.62rem; font-weight: 600;
+}
+.chat-footer svg { width: 12px; height: 12px; color: var(--brand-red); flex-shrink: 0; }
+.chat-footer span { display: inline-flex; align-items: center; gap: 5px; }
+
+/* ============ CP SHOWCASE ============ */
+.section.cp-showcase {
+    position: relative; padding: 70px 46px 58px;
+    background: linear-gradient(135deg, var(--brand-blue-deep) 0%, var(--brand-blue-dark) 45%, var(--brand-blue) 100%);
+    color: #E8EEF8; border: 1px solid rgba(74, 123, 212, 0.3);
+    overflow: hidden; isolation: isolate;
+    box-shadow: 0 30px 80px rgba(15, 42, 84, 0.4);
+}
+.section.cp-showcase::before {
+    content: ""; position: absolute; inset: 0; height: 100%;
+    background-image: radial-gradient(circle, rgba(74, 123, 212, 0.18) 1px, transparent 1.4px);
+    background-size: 34px 34px;
+    -webkit-mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent);
+    mask-image: radial-gradient(ellipse 90% 70% at 50% 30%, black, transparent);
+    opacity: 1; z-index: 0; pointer-events: none;
+}
+.section.cp-showcase::after {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(circle at 8% 10%, rgba(74, 123, 212, 0.4), transparent 45%),
+        radial-gradient(circle at 92% 90%, rgba(229, 37, 42, 0.25), transparent 50%),
+        radial-gradient(circle at 50% 100%, rgba(255, 255, 255, 0.06), transparent 70%);
+    z-index: 0; pointer-events: none;
+}
+.section.cp-showcase > * { position: relative; z-index: 2; }
+.section.cp-showcase:hover { border-color: rgba(74, 123, 212, 0.5); box-shadow: 0 34px 90px rgba(15, 42, 84, 0.5); }
+
+.cp-divider {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin: 44px 0 24px; color: var(--text-3); font-size: 0.68rem;
+    font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; position: relative;
+}
+.cp-divider::before, .cp-divider::after {
+    content: ""; flex: 1; height: 1px;
+    background: linear-gradient(to right, transparent, var(--border-strong), transparent);
+    max-width: 320px;
+}
+.cp-divider span {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 8px 20px; border-radius: var(--r-pill);
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-3); white-space: nowrap;
+}
+.cp-divider svg { width: 14px; height: 14px; color: var(--brand-blue); }
+.cp-header { text-align: center; margin-bottom: 42px; padding-bottom: 38px; border-bottom: 1px solid rgba(74, 123, 212, 0.2); }
+.cp-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 6px 16px; margin-bottom: 20px; border-radius: var(--r-pill);
+    background: rgba(74, 123, 212, 0.15); border: 1px solid rgba(74, 123, 212, 0.35);
+    color: #A0BEE8; font-size: 0.66rem; font-weight: 800;
+    letter-spacing: 0.14em; text-transform: uppercase;
+}
+.cp-badge-dot {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--brand-red); box-shadow: 0 0 12px var(--brand-red);
+    animation: cpPulse 2s ease-in-out infinite;
+}
+@keyframes cpPulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(1.3); } }
+.cp-logo-row { display: inline-flex; align-items: center; gap: 16px; margin-bottom: 18px; }
+.cp-logo-mark {
+    width: 62px; height: 62px; flex-shrink: 0;
+    display: grid; place-items: center; border-radius: 20px;
+    background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-red-dark) 100%);
+    box-shadow: 0 14px 40px rgba(229, 37, 42, 0.4), inset 0 -3px 8px rgba(0, 0, 0, 0.18), inset 0 3px 6px rgba(255, 255, 255, 0.25);
+    animation: cpFloat 5s ease-in-out infinite;
+}
+@keyframes cpFloat { 0%, 100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-6px) rotate(-2deg); } }
+.cp-logo-mark svg { width: 100%; height: 100%; }
+.cp-logo-text { text-align: right; }
+.cp-logo-text h2 { margin: 0; font-size: 2.4rem; font-weight: 900; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1.1; text-shadow: 0 2px 20px rgba(74, 123, 212, 0.4); }
+.cp-logo-text p { color: #A0BEE8; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; direction: ltr; text-align: right; margin: 4px 0 0; }
+.cp-tagline { max-width: 640px; margin: 8px auto 0; color: #C8D6EC; font-size: 0.94rem; line-height: 1.95; }
+.cp-tagline strong { color: #FFFFFF; font-weight: 800; }
+.cp-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 34px auto 48px; max-width: 900px; }
+.cp-stat {
+    position: relative; padding: 22px 16px; border-radius: var(--r-md);
+    text-align: center; background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(74, 123, 212, 0.25);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    transition: all 0.35s var(--ease); overflow: hidden;
+}
+.cp-stat::before {
+    content: ""; position: absolute; top: 0; right: 0; left: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brand-red), transparent);
+    opacity: 0; transition: opacity 0.35s var(--ease);
+}
+.cp-stat:hover { background: rgba(255, 255, 255, 0.09); border-color: rgba(74, 123, 212, 0.5); transform: translateY(-4px); box-shadow: 0 14px 40px rgba(74, 123, 212, 0.2); }
+.cp-stat:hover::before { opacity: 1; }
+.cp-stat strong {
+    display: block; color: #FFFFFF; font-size: 1.55rem; font-weight: 900;
+    letter-spacing: -0.02em; margin-bottom: 6px; line-height: 1.1;
+    background: linear-gradient(135deg, #FFFFFF 40%, #A0BEE8);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.cp-stat span { color: #A0BEE8; font-size: 0.7rem; font-weight: 500; line-height: 1.5; }
+.cp-subhead { display: flex; align-items: center; justify-content: center; gap: 14px; margin: 52px 0 26px; }
+.cp-subhead h3 {
+    margin: 0; color: #FFFFFF; font-size: 1.15rem; font-weight: 800;
+    letter-spacing: -0.01em; position: relative; padding: 0 18px;
+}
+.cp-subhead h3::before, .cp-subhead h3::after {
+    content: ""; position: absolute; top: 50%; width: 32px; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brand-red), transparent);
+}
+.cp-subhead h3::before { right: -28px; }
+.cp-subhead h3::after { left: -28px; }
+.cp-team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 10px; }
+.cp-team-card {
+    position: relative; padding: 28px 22px 24px; border-radius: var(--r-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(74, 123, 212, 0.2);
+    text-align: center; transition: all 0.4s var(--ease);
+    overflow: hidden; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.cp-team-card::before {
+    content: ""; position: absolute; top: 0; right: 0; left: 0; height: 2px;
+    background: linear-gradient(90deg, transparent, var(--brand-red), transparent);
+    opacity: 0; transition: opacity 0.4s var(--ease);
+}
+.cp-team-card:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(74, 123, 212, 0.55);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(74, 123, 212, 0.25);
+}
+.cp-team-card:hover::before { opacity: 1; }
+.cp-team-avatar {
+    width: 62px; height: 62px; margin: 0 auto 16px; border-radius: 50%;
+    background: linear-gradient(135deg, rgba(74, 123, 212, 0.3), rgba(30, 79, 160, 0.2));
+    color: #A0BEE8; display: grid; place-items: center;
+    font-size: 0.95rem; font-weight: 800; letter-spacing: -0.02em;
+    border: 1.5px solid rgba(74, 123, 212, 0.4);
+    transition: all 0.4s var(--ease);
+    box-shadow: 0 8px 24px rgba(74, 123, 212, 0.18);
+}
+.cp-team-card:hover .cp-team-avatar {
+    background: linear-gradient(135deg, var(--brand-blue), var(--brand-red));
+    color: #FFFFFF; border-color: transparent; transform: scale(1.08);
+    box-shadow: 0 12px 32px rgba(74, 123, 212, 0.45);
+}
+.cp-team-card h4 { color: #FFFFFF; font-size: 0.9rem; margin-bottom: 5px; font-weight: 800; letter-spacing: -0.005em; transition: color 0.3s var(--ease); }
+.cp-team-card:hover h4 { color: #A0BEE8; }
+.cp-team-card .cp-role { color: #A0BEE8; font-size: 0.66rem; font-weight: 600; margin-bottom: 14px; direction: ltr; letter-spacing: 0.04em; transition: color 0.3s var(--ease); }
+.cp-team-skills { display: flex; flex-wrap: wrap; gap: 5px; justify-content: center; }
+.cp-team-skills span {
+    padding: 4px 10px; border-radius: var(--r-xs);
+    font-size: 0.56rem; font-weight: 600;
+    background: rgba(74, 123, 212, 0.12); color: #A0BEE8;
+    border: 1px solid rgba(74, 123, 212, 0.22);
+    direction: ltr; transition: all 0.3s var(--ease);
+}
+.cp-team-card:hover .cp-team-skills span {
+    background: rgba(74, 123, 212, 0.22); color: #A0BEE8;
+    border-color: rgba(74, 123, 212, 0.45);
+}
+.cp-portfolio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 10px; }
+.cp-project {
+    position: relative; min-height: 250px; padding: 24px 22px;
+    display: flex; flex-direction: column; border-radius: var(--r-md);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(74, 123, 212, 0.2);
+    transition: all 0.4s var(--ease); overflow: hidden;
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.cp-project::before {
+    content: ""; position: absolute; inset: 0;
+    background: radial-gradient(circle at 100% 0%, rgba(74, 123, 212, 0.15), transparent 55%);
+    opacity: 0; transition: opacity 0.4s var(--ease);
+    pointer-events: none; z-index: 0;
+}
+.cp-project:hover {
+    background: rgba(255, 255, 255, 0.09);
+    border-color: rgba(74, 123, 212, 0.55);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(74, 123, 212, 0.25);
+}
+.cp-project:hover::before { opacity: 1; }
+.cp-project-num { position: absolute; left: 16px; top: 6px; color: #FFFFFF; opacity: 0.05; font-size: 3.8rem; line-height: 1; font-weight: 900; pointer-events: none; }
+.cp-project-type {
+    width: fit-content; position: relative; z-index: 1;
+    padding: 4px 11px; border-radius: var(--r-xs);
+    font-size: 0.56rem; font-weight: 800;
+    margin-bottom: 14px; letter-spacing: 0.08em;
+    background: rgba(74, 123, 212, 0.18); color: #A0BEE8;
+    border: 1px solid rgba(74, 123, 212, 0.3);
+    direction: ltr; transition: all 0.3s var(--ease);
+}
+.cp-project:hover .cp-project-type { background: rgba(74, 123, 212, 0.28); border-color: rgba(74, 123, 212, 0.55); }
+.cp-project h4 { position: relative; z-index: 1; color: #FFFFFF; font-size: 0.98rem; margin-bottom: 9px; font-weight: 800; letter-spacing: -0.008em; transition: color 0.3s var(--ease); }
+.cp-project:hover h4 { color: #A0BEE8; }
+.cp-project p { position: relative; z-index: 1; flex: 1; margin: 0; color: #C8D6EC; font-size: 0.74rem; line-height: 1.85; }
+.cp-project-tags { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 5px; margin-top: 15px; }
+.cp-project-tags span {
+    padding: 3px 9px; border-radius: var(--r-xs);
+    font-size: 0.55rem; font-weight: 600;
+    background: rgba(255, 255, 255, 0.06); color: #A0BEE8;
+    border: 1px solid rgba(74, 123, 212, 0.15);
+    direction: ltr; transition: all 0.3s var(--ease);
+}
+.cp-project:hover .cp-project-tags span {
+    background: rgba(74, 123, 212, 0.18); color: #A0BEE8;
+    border-color: rgba(74, 123, 212, 0.35);
+}
+.cp-note {
+    position: relative; margin-top: 40px; padding: 24px 28px;
+    border-radius: var(--r-md); background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(74, 123, 212, 0.22);
+    border-right: 3px solid var(--brand-red);
+    text-align: center; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.cp-note p { margin: 0; color: #C8D6EC; font-size: 0.86rem; line-height: 1.9; }
+.cp-note strong { color: #A0BEE8; font-weight: 700; }
+
+.cp-showcase .cp-team-card, .cp-showcase .cp-project, .cp-showcase .cp-stat,
+.cp-showcase .cp-header, .cp-showcase .cp-subhead, .cp-showcase .cp-note {
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease), background 0.3s var(--ease), border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.cp-showcase.visible .cp-header { opacity: 1; transform: translateY(0); transition-delay: 0.1s; }
+.cp-showcase.visible .cp-stat:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.25s; }
+.cp-showcase.visible .cp-stat:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.32s; }
+.cp-showcase.visible .cp-stat:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.39s; }
+.cp-showcase.visible .cp-stat:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.46s; }
+.cp-showcase.visible .cp-subhead { opacity: 1; transform: translateY(0); transition-delay: 0.55s; }
+.cp-showcase.visible .cp-team-card:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.65s; }
+.cp-showcase.visible .cp-team-card:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.72s; }
+.cp-showcase.visible .cp-team-card:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.79s; }
+.cp-showcase.visible .cp-team-card:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.86s; }
+.cp-showcase.visible .cp-team-card:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.93s; }
+.cp-showcase.visible .cp-team-card:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 1.00s; }
+.cp-showcase.visible .cp-project:nth-child(1) { opacity: 1; transform: translateY(0); transition-delay: 0.15s; }
+.cp-showcase.visible .cp-project:nth-child(2) { opacity: 1; transform: translateY(0); transition-delay: 0.22s; }
+.cp-showcase.visible .cp-project:nth-child(3) { opacity: 1; transform: translateY(0); transition-delay: 0.29s; }
+.cp-showcase.visible .cp-project:nth-child(4) { opacity: 1; transform: translateY(0); transition-delay: 0.36s; }
+.cp-showcase.visible .cp-project:nth-child(5) { opacity: 1; transform: translateY(0); transition-delay: 0.43s; }
+.cp-showcase.visible .cp-project:nth-child(6) { opacity: 1; transform: translateY(0); transition-delay: 0.50s; }
+.cp-showcase.visible .cp-project:nth-child(7) { opacity: 1; transform: translateY(0); transition-delay: 0.57s; }
+.cp-showcase.visible .cp-project:nth-child(8) { opacity: 1; transform: translateY(0); transition-delay: 0.64s; }
+.cp-showcase.visible .cp-project:nth-child(9) { opacity: 1; transform: translateY(0); transition-delay: 0.71s; }
+.cp-showcase.visible .cp-project:nth-child(10) { opacity: 1; transform: translateY(0); transition-delay: 0.78s; }
+.cp-showcase.visible .cp-project:nth-child(11) { opacity: 1; transform: translateY(0); transition-delay: 0.85s; }
+.cp-showcase.visible .cp-project:nth-child(12) { opacity: 1; transform: translateY(0); transition-delay: 0.92s; }
+.cp-showcase.visible .cp-note { opacity: 1; transform: translateY(0); transition-delay: 1.15s; }
+
+/* ============ FINAL CTA ============ */
+.final-cta {
+    position: relative; margin: 40px 0 20px; padding: 68px 40px;
+    text-align: center; border-radius: var(--r-2xl);
+    background: var(--surface); border: 1px solid var(--border);
+    box-shadow: var(--shadow-lg); overflow: hidden;
+}
+.final-cta::before {
+    content: ""; position: absolute; inset: 0;
+    background:
+        radial-gradient(ellipse 500px 300px at 100% 0%, var(--brand-blue-soft), transparent 60%),
+        radial-gradient(ellipse 500px 300px at 0% 100%, var(--brand-red-soft), transparent 60%);
+    z-index: 0; pointer-events: none;
+}
+.final-content { position: relative; z-index: 1; max-width: 760px; margin: auto; }
+.final-cta h2 { margin: 0 0 16px; font-size: clamp(1.5rem, 4vw, 2.3rem); font-weight: 900; letter-spacing: -0.025em; line-height: 1.3; color: var(--text); }
+.final-cta h2 .accent { color: var(--brand-blue); }
+.final-cta p { color: var(--text-2); font-size: 0.9rem; line-height: 1.95; max-width: 620px; margin: 0 auto; }
+.cta-button {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    margin-top: 26px; padding: 16px 36px; border-radius: var(--r-pill);
+    color: #fff; background: var(--brand-blue);
+    font-weight: 800; font-size: 0.9rem; letter-spacing: -0.005em;
+    transition: all 0.3s var(--ease);
+    box-shadow: 0 8px 24px var(--brand-blue-glow);
+}
+.cta-button:hover { background: var(--brand-red); transform: translateY(-2px); box-shadow: 0 12px 32px var(--brand-red-glow); }
+.cta-button svg { width: 15px; height: 15px; transition: transform 0.3s var(--ease); }
+.cta-button:hover svg { transform: translate(3px, -3px); }
+.cta-tags { display: flex; justify-content: center; flex-wrap: wrap; gap: 6px; margin-top: 22px; }
+.cta-tags span {
+    padding: 5px 13px; border-radius: var(--r-pill);
+    font-size: 0.62rem; font-weight: 600; color: var(--text-3);
+    background: var(--surface-2); border: 1px solid var(--border);
+    transition: all 0.2s var(--ease); direction: ltr;
+}
+.cta-tags span:hover { color: var(--brand-blue); border-color: var(--brand-blue); background: var(--brand-blue-soft); }
+
+/* ============ FOOTER ============ */
+footer { padding: 40px 20px calc(55px + env(safe-area-inset-bottom)); text-align: center; color: var(--text-3); font-size: 0.74rem; }
+footer strong { color: var(--text); font-weight: 800; display: block; margin-bottom: 6px; font-size: 0.84rem; }
+footer p { margin: 3px 0; }
+.footer-kavian {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-bottom: 10px; padding: 6px 16px;
+    border-radius: var(--r-pill); background: var(--brand-blue-soft);
+    border: 1px solid rgba(30, 79, 160, 0.15);
+    color: var(--brand-blue); font-size: 0.7rem; font-weight: 700;
+}
+.footer-kavian svg { width: 22px; height: 22px; }
+.footer-slogan {
+    margin-top: 12px; color: var(--text-3); font-size: 0.7rem;
+    font-weight: 600; letter-spacing: 0.05em;
+    display: inline-block; padding: 5px 14px;
+    border-radius: var(--r-pill); background: var(--surface);
+    border: 1px solid var(--border); direction: ltr;
+}
+
+/* ============ BACK TO TOP ============ */
+.back-top {
+    position: fixed; left: 24px; bottom: calc(24px + env(safe-area-inset-bottom));
+    z-index: 900; width: 46px; height: 46px;
+    display: grid; place-items: center; border-radius: 50%;
+    background: var(--brand-blue); color: #fff;
+    font-size: 1rem; font-weight: 800;
+    box-shadow: 0 10px 28px var(--brand-blue-glow);
+    cursor: pointer; opacity: 0; visibility: hidden;
+    transform: translateY(16px); transition: all 0.35s var(--ease);
+}
+.back-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
+.back-top:hover { background: var(--brand-red); transform: translateY(-4px); }
+
+/* ============ CONTACT MODAL ============ */
+.contact-modal {
+    position: fixed; inset: 0; z-index: 1100;
+    display: flex; align-items: center; justify-content: center;
+    pointer-events: none; visibility: hidden; opacity: 0;
+    transition: opacity 0.3s var(--ease), visibility 0.3s; padding: 20px;
+}
+.contact-modal.active { pointer-events: auto; visibility: visible; opacity: 1; }
+.contact-modal-overlay {
+    position: absolute; inset: 0; background: rgba(10, 18, 32, 0.6);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+.contact-modal-box {
+    position: relative; width: min(400px, 100%);
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: var(--r-lg); padding: 30px 26px 24px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    text-align: center; z-index: 2;
+    transform: translateY(20px) scale(0.97);
+    transition: transform 0.35s var(--ease);
+}
+.contact-modal.active .contact-modal-box { transform: translateY(0) scale(1); }
+.modal-close {
+    position: absolute; top: 14px; left: 14px;
+    width: 34px; height: 34px; border-radius: 50%;
+    background: var(--surface-3); color: var(--text-3);
+    font-size: 1.1rem; line-height: 1;
+    display: grid; place-items: center;
+    transition: all 0.25s var(--ease);
+}
+.modal-close:hover { background: var(--surface-2); color: var(--brand-blue); transform: rotate(90deg); }
+.contact-modal-box h3 { color: var(--text); font-size: 1.2rem; margin-bottom: 6px; font-weight: 800; }
+.contact-modal-box > p { color: var(--text-3); font-size: 0.78rem; margin-bottom: 22px; }
+.contact-options { display: flex; flex-direction: column; gap: 8px; }
+.contact-option {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; border-radius: var(--r-sm);
+    background: var(--surface-2); border: 1px solid var(--border);
+    color: var(--text); transition: all 0.25s var(--ease);
+}
+.contact-option:hover { border-color: var(--brand-blue); background: var(--brand-blue-soft); transform: translateY(-2px); }
+.contact-icon {
+    flex-shrink: 0; width: 30px; height: 30px;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: var(--r-xs); background: var(--surface-3); color: var(--text-2);
+}
+.contact-icon svg { width: 16px; height: 16px; }
+.contact-option > span:not(.contact-icon) { font-weight: 700; flex: 1; text-align: right; font-size: 0.84rem; }
+.contact-option small { color: var(--text-3); font-size: 0.7rem; font-weight: 500; direction: ltr; }
+
+/* ============ RESPONSIVE ============ */
+@media (min-width: 1440px) {
+    :root { --container-pad: 60px; }
+    body { font-size: 16px; }
+    .container { max-width: 1240px; }
+    .hero { padding: 100px 60px 90px; min-height: 700px; }
+    .section { padding: 52px 48px; }
+    .section-title { font-size: 1.5rem; }
+    .section p { font-size: 0.94rem; }
+}
+@media (max-width: 1024px) {
+    .cp-team-grid, .cp-portfolio { grid-template-columns: repeat(2, 1fr); }
+    .hero { padding: 70px 32px 60px; }
+    .section { padding: 36px 32px; }
+}
+@media (max-width: 920px) {
+    .bot-grid { grid-template-columns: 1fr 1fr; }
+    .crm-flow { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .crm-step:not(:last-child)::after, .crm-step:not(:last-child)::before { display: none; }
+    .cp-stats { grid-template-columns: 1fr 1fr; }
+    .hero-stats { grid-template-columns: repeat(2, 1fr); }
+    .ai-features-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 768px) {
+    :root { --header-h: 62px; --container-pad: 24px; }
+    body { font-size: 14.5px; line-height: 1.8; }
+    .container { width: calc(100% - var(--container-pad)); }
+    .header-inner { width: calc(100% - var(--container-pad)); }
+    .desktop-only { display: none !important; }
+    .hamburger { display: flex; }
+    .logo-mark { width: 36px; height: 36px; }
+    .logo-text .cn { font-size: 0.85rem; }
+    .logo-text .tag { font-size: 0.52rem; }
+    .hero { padding: 48px 20px 44px; min-height: auto; margin: 20px auto 24px; border-radius: var(--r-xl); }
+    .hero-kavian-brand { padding: 22px 28px 18px; gap: 10px; margin-bottom: 24px; border-radius: var(--r-xl); }
+    .hero-kavian-brand .kavian-logo-svg { width: 72px; height: 72px; }
+    .hero-kavian-brand .kavian-name { font-size: 1.35rem; }
+    .hero-kavian-brand .kavian-tagline { font-size: 0.64rem; letter-spacing: 0.2em; margin-top: 4px; padding-top: 8px; }
+    .hero h1 { letter-spacing: -0.022em; margin-bottom: 18px; }
+    .hero-description { font-size: 0.87rem; }
+    .hero-chips { gap: 6px; margin-top: 22px; }
+    .hero-chip { font-size: 0.65rem; padding: 7px 12px; }
+    .hero-stats { gap: 8px; margin-top: 28px; }
+    .hero-stat { padding: 16px 10px; }
+    .hero-stat strong { font-size: 0.9rem; }
+    .toc { padding: 20px 18px; border-radius: var(--r-md); }
+    .toc-links { grid-template-columns: 1fr 1fr; gap: 3px; }
+    .toc-links a { font-size: 0.72rem; padding: 8px 10px; }
+    .toc-title { font-size: 0.88rem; }
+    .section { padding: 28px 20px; border-radius: var(--r-lg); margin-bottom: 14px; }
+    .section-head { gap: 12px; padding-bottom: 14px; margin-bottom: 18px; }
+    .section-icon { width: 38px; height: 38px; font-size: 0.82rem; }
+    .section-title { font-size: 1.13rem; }
+    .section-subtitle { font-size: 0.68rem; }
+    .section h3 { font-size: 0.96rem; margin-top: 22px; }
+    .section p { font-size: 0.86rem; line-height: 1.9; }
+    .section ul li { font-size: 0.86rem; }
+    .highlight { padding: 18px 20px; font-size: 0.85rem; }
+    .info-box { padding: 15px 18px; font-size: 0.82rem; }
+    .cards { grid-template-columns: 1fr; gap: 10px; }
+    .card { padding: 16px 18px; }
+    .card h4 { font-size: 0.88rem; }
+    .card p { font-size: 0.78rem; }
+    .bot-service { padding: 24px 20px; }
+    .bot-service-top { flex-direction: column; align-items: stretch; }
+    .bot-service h3 { font-size: 1.08rem; }
+    .bot-grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+    .crm-flow { grid-template-columns: 1fr; }
+    .section.pricing-showcase { padding: 36px 20px 30px; }
+    .visual-watermark { font-size: clamp(2.4rem, 15vw, 4.5rem); letter-spacing: 0.08em; }
+    .visual-badge { font-size: 0.62rem; padding: 5px 13px; }
+    .section.agentic-showcase { padding: 36px 20px 30px; }
+    .agentic-watermark { font-size: clamp(2.8rem, 18vw, 5rem); letter-spacing: 0.06em; }
+    .agentic-badge { font-size: 0.62rem; padding: 5px 13px; }
+    .section.cp-showcase { padding: 40px 20px 36px; }
+    .cp-logo-mark { width: 52px; height: 52px; border-radius: 16px; }
+    .cp-logo-text h2 { font-size: 1.65rem; }
+    .cp-logo-text p { font-size: 0.64rem; letter-spacing: 0.1em; }
+    .cp-tagline { font-size: 0.84rem; }
+    .cp-badge { font-size: 0.6rem; padding: 5px 13px; }
+    .cp-team-grid, .cp-portfolio { grid-template-columns: 1fr; gap: 12px; }
+    .cp-team-card { padding: 22px 18px 20px; }
+    .cp-project { min-height: auto; padding: 20px 18px; }
+    .cp-subhead { margin: 36px 0 20px; }
+    .cp-subhead h3 { font-size: 1rem; }
+    .cp-stats { grid-template-columns: 1fr 1fr; margin: 28px auto 32px; gap: 10px; }
+    .cp-stat { padding: 18px 12px; }
+    .cp-stat strong { font-size: 1.3rem; }
+    .cp-note { padding: 20px 20px; margin-top: 30px; }
+    .final-cta { padding: 48px 22px; border-radius: var(--r-xl); }
+    .cta-button { width: 100%; padding: 15px 28px; font-size: 0.87rem; }
+    .back-top { left: 14px; bottom: calc(14px + env(safe-area-inset-bottom)); width: 42px; height: 42px; font-size: 0.95rem; }
+    .ai-live-showcase { margin: 20px 0 18px; border-radius: var(--r-lg); }
+    .ai-live-showcase-inner { gap: 18px; padding: 20px 16px; }
+    .ai-live-content h3 { font-size: 1.02rem; line-height: 1.5; }
+    .ai-live-content p { font-size: 0.82rem; }
+    .ai-features-grid { grid-template-columns: repeat(2, 1fr); gap: 5px; }
+    .ai-feature { font-size: 0.66rem; padding: 8px 10px; gap: 6px; }
+    .ai-feature em { font-size: 0.82rem; }
+    .chat-window { padding: 12px; border-radius: var(--r-md); }
+    .chat-head { gap: 8px; padding: 4px 4px 10px; }
+    .chat-avatar { width: 36px; height: 36px; font-size: 0.95rem; }
+    .chat-head strong { font-size: 0.78rem; }
+    .chat-head small { font-size: 0.6rem; }
+    .chat-body { max-height: 60vh; padding: 2px 0; }
+    .bubble { font-size: 0.74rem; line-height: 1.7; padding: 9px 12px; max-width: 95%; margin-top: 8px; }
+    .bubble.ai .price-mini { padding: 8px 10px; font-size: 0.68rem; }
+    .price-mini-label { font-size: 0.64rem; }
+    .price-mini-value { font-size: 0.72rem; }
+    .car-card-mini { padding: 8px 10px; }
+    .car-card-mini strong { font-size: 0.68rem; }
+    .car-card-mini span { font-size: 0.58rem; }
+    .car-card-mini em { font-size: 0.64rem; }
+    .bubble-badge { font-size: 0.55rem; padding: 2px 7px; }
+    .typing::before { font-size: 0.58rem; }
+    .chat-footer { font-size: 0.58rem; padding: 8px 2px 0; }
+    .contact-modal-box { padding: 26px 20px 20px; }
+}
+@media (max-width: 520px) {
+    :root { --container-pad: 20px; }
+    body { font-size: 14px; }
+    .hero { padding: 40px 16px 36px; border-radius: var(--r-lg); }
+    .hero-kavian-brand { padding: 18px 22px 14px; gap: 8px; margin-bottom: 20px; border-radius: var(--r-lg); }
+    .hero-kavian-brand .kavian-logo-svg { width: 62px; height: 62px; }
+    .hero-kavian-brand .kavian-name { font-size: 1.1rem; }
+    .hero-kavian-brand .kavian-tagline { font-size: 0.54rem; letter-spacing: 0.14em; }
+    .hero h1 { font-size: 1.55rem; line-height: 1.3; letter-spacing: -0.02em; }
+    .hero-description { font-size: 0.79rem; line-height: 1.85; }
+    .hero-chip { font-size: 0.58rem; padding: 6px 10px; }
+    .hero-stat strong { font-size: 0.85rem; }
+    .hero-stat span { font-size: 0.62rem; }
+    .toc { padding: 16px 14px; }
+    .toc-links { grid-template-columns: 1fr; }
+    .toc-title { font-size: 0.85rem; }
+    .toc-title-icon { width: 28px; height: 28px; }
+    .section { padding: 22px 16px; border-radius: var(--r-md); }
+    .section-head { align-items: flex-start; gap: 10px; }
+    .section-title { font-size: 1rem; line-height: 1.35; }
+    .section-icon { width: 34px; height: 34px; font-size: 0.76rem; }
+    .section h3 { font-size: 0.92rem; margin-top: 20px; }
+    .section p { font-size: 0.82rem; }
+    .highlight { padding: 15px 16px; font-size: 0.8rem; }
+    .info-box { padding: 13px 16px; font-size: 0.79rem; }
+    .bot-service { padding: 20px 16px; }
+    .bot-service h3 { font-size: 1rem; }
+    .bot-grid { grid-template-columns: 1fr; }
+    .section.pricing-showcase { padding: 28px 16px 24px; }
+    .visual-badge { font-size: 0.58rem; padding: 5px 12px; gap: 8px; }
+    .visual-watermark { font-size: 2.1rem; letter-spacing: 0.05em; }
+    .visual-watermark span { font-size: 0.42em; letter-spacing: 0.3em; }
+    .section.agentic-showcase { padding: 28px 16px 24px; }
+    .agentic-badge { font-size: 0.58rem; padding: 5px 12px; gap: 8px; }
+    .agentic-watermark { font-size: 2.4rem; letter-spacing: 0.05em; }
+    .agentic-watermark span { font-size: 0.42em; letter-spacing: 0.3em; }
+    .section.cp-showcase { padding: 32px 16px 28px; border-radius: var(--r-lg); }
+    .cp-logo-row { flex-direction: column; gap: 10px; }
+    .cp-logo-text { text-align: center; }
+    .cp-logo-text p { text-align: center; }
+    .cp-logo-text h2 { font-size: 1.4rem; }
+    .cp-logo-mark { width: 48px; height: 48px; border-radius: 14px; }
+    .cp-stats { grid-template-columns: 1fr; }
+    .cp-team-card { padding: 20px 16px; }
+    .cp-project { padding: 18px 16px; }
+    .cp-subhead h3 { font-size: 0.9rem; padding: 0 10px; }
+    .cp-subhead h3::before, .cp-subhead h3::after { width: 18px; }
+    .cp-subhead h3::before { right: -16px; }
+    .cp-subhead h3::after { left: -16px; }
+    .final-cta { padding: 40px 18px; border-radius: var(--r-lg); }
+    .final-cta h2 { font-size: 1.28rem; line-height: 1.35; }
+    .cta-button { font-size: 0.83rem; padding: 14px 22px; }
+    .cta-tags span { font-size: 0.58rem; padding: 4px 11px; }
+    .ai-live-showcase-inner { padding: 16px 12px; gap: 14px; }
+    .ai-live-content h3 { font-size: 0.96rem; }
+    .ai-live-content p { font-size: 0.78rem; }
+    .ai-features-grid { grid-template-columns: 1fr; }
+    .ai-feature { font-size: 0.64rem; padding: 7px 10px; }
+    .chat-window { padding: 10px; }
+    .chat-avatar { width: 32px; height: 32px; font-size: 0.88rem; }
+    .chat-head strong { font-size: 0.74rem; }
+    .chat-head small { font-size: 0.56rem; }
+    .bubble { font-size: 0.7rem; padding: 8px 10px; line-height: 1.68; max-width: 100%; }
+    .bubble.ai .price-mini { padding: 7px 9px; font-size: 0.64rem; border-right-width: 2px; }
+    .price-mini-label { font-size: 0.6rem; }
+    .price-mini-value { font-size: 0.68rem; }
+    .car-card-mini { padding: 7px 9px; gap: 6px; }
+    .car-card-mini strong { font-size: 0.64rem; }
+    .car-card-mini span { font-size: 0.55rem; }
+    .car-card-mini em { font-size: 0.6rem; }
+    .bubble-badge { font-size: 0.52rem; padding: 2px 6px; }
+    .chat-body { max-height: 62vh; }
+    .chat-footer { font-size: 0.54rem; }
+    .back-top { left: 12px; bottom: calc(12px + env(safe-area-inset-bottom)); width: 40px; height: 40px; }
+}
+@media (max-width: 360px) {
+    :root { --container-pad: 16px; }
+    body { font-size: 13.5px; }
+    .hero h1 { font-size: 1.4rem; }
+    .section-title { font-size: 0.95rem; }
+    .chat-body { max-height: 58vh; }
+    .bubble { font-size: 0.66rem; padding: 7px 9px; }
+    .ai-feature { font-size: 0.6rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .cp-showcase .cp-team-card, .cp-showcase .cp-project, .cp-showcase .cp-stat,
+    .cp-showcase .cp-header, .cp-showcase .cp-subhead, .cp-showcase .cp-note {
+        opacity: 1 !important; transform: none !important;
+    }
+}
+@media print {
+    .site-header, .mobile-overlay, .back-top, .toc, .contact-modal, .theme-toggle, .hamburger { display: none !important; }
+    body { background: #fff; color: #000; font-size: 11px; }
+    .hero, .section, .bot-service, .final-cta {
+        break-inside: avoid; -webkit-print-color-adjust: exact; print-color-adjust: exact;
+        box-shadow: none; border: 1px solid #ddd;
+    }
+    .section { opacity: 1 !important; transform: none !important; }
+    .card p { max-height: none !important; opacity: 1 !important; margin-top: 12px !important; transform: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="#" class="logo" aria-label="Code Packs">
+            <span class="logo-mark" aria-hidden="true">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <path d="M4 6 H14 L10 14 L14 22 H4 L8 14 Z" fill="var(--brand-blue)"/>
+                    <path d="M4 22 H14 L10 30 L14 38 H4 L8 30 Z" fill="var(--brand-blue)" opacity="0.65"/>
+                    <circle cx="30" cy="14" r="6" stroke="var(--brand-red)" stroke-width="2" fill="none"/>
+                    <path d="M22 32 L30 24 L38 32" stroke="var(--brand-red)" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+            </span>
+            <span class="logo-text">
+                <span class="cn">Code Packs</span>
+                <span class="tag">Intelligent Digital Solutions</span>
+            </span>
+        </a>
+        <div class="header-actions">
+            <button class="theme-toggle" id="themeToggle" aria-label="تغییر پوسته" title="تغییر پوسته روشن / تاریک">
+                <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+            </button>
+            <button class="menu-button desktop-only" id="tocButton">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+                فهرست پروپوزال
+            </button>
+            <button class="hamburger" id="hamburger" aria-label="نمایش فهرست">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </div>
+</header>
+
+<div class="mobile-overlay" id="mobileOverlay">
+    <nav class="mobile-panel">
+        <div class="mobile-panel-title">فهرست پروپوزال</div>
+        <a href="#s1"><span class="mobile-num">۱</span>مقدمه و چشم‌انداز</a>
+        <a href="#s2"><span class="mobile-num">۲</span>معماری کلان پلتفرم</a>
+        <a href="#s3"><span class="mobile-num">۳</span>بازطراحی وب‌سایت</a>
+        <a href="#s4" class="visual-link"><span class="mobile-num">★</span>موتور قیمت‌گذاری هوشمند</a>
+        <a href="#s5"><span class="mobile-num">۵</span>قیف فروش و فروش خودرو</a>
+        <a href="#s6" class="ai-link"><span class="mobile-num">◆</span>AI Car Finder + نمایش زنده</a>
+        <a href="#s7"><span class="mobile-num">۷</span>مقایسه و ابزارهای تعاملی</a>
+        <a href="#s8"><span class="mobile-num">۸</span>کارشناسی آنلاین</a>
+        <a href="#s9"><span class="mobile-num">۹</span>فروش اقساطی هوشمند</a>
+        <a href="#s10"><span class="mobile-num">۱۰</span>مدیریت مرکزی و آگهی</a>
+        <a href="#s11"><span class="mobile-num">۱۱</span>CRM و اتوماسیون</a>
+        <a href="#s12"><span class="mobile-num">۱۲</span>پیشنهاد هوشمند</a>
+        <a href="#s13"><span class="mobile-num">۱۳</span>داشبورد و SEO</a>
+        <a href="#s14"><span class="mobile-num">۱۴</span>تحلیل بازار و موجودی</a>
+        <a href="#s15"><span class="mobile-num">۱۵</span>جمع‌بندی و ارزش‌آفرینی</a>
+        <a href="#s16" class="cp-link"><span class="mobile-num">◆</span>معرفی Code Packs</a>
+    </nav>
+</div>
+
+<button class="back-top" id="backTop" aria-label="بازگشت به بالا">↑</button>
+
+<main class="container">
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-kavian-brand">
+            <svg class="kavian-logo-svg" viewBox="0 0 120 120" fill="none" aria-label="اتومبیل صمد شکرالهی">
+                <path d="M10 42 Q30 8 68 18 Q92 24 108 48 L96 52 Q82 30 60 26 Q34 22 20 48 Z" fill="var(--brand-blue)"/>
+                <path d="M14 55 Q36 30 66 38" stroke="var(--brand-blue)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+                <path d="M18 78 Q22 68 34 66 L42 60 L70 60 L80 68 Q94 68 100 78 L100 88 L92 88 Q92 96 84 96 Q76 96 76 88 L42 88 Q42 96 34 96 Q26 96 26 88 L18 88 Z" fill="var(--brand-red)"/>
+                <path d="M46 64 L58 64 L58 74 L44 74 Z M62 64 L74 64 L76 74 L62 74 Z" fill="#FFFFFF" opacity="0.85"/>
+                <circle cx="35" cy="88" r="8" fill="var(--brand-blue-deep)"/>
+                <circle cx="35" cy="88" r="3.5" fill="#FFFFFF"/>
+                <circle cx="83" cy="88" r="8" fill="var(--brand-blue-deep)"/>
+                <circle cx="83" cy="88" r="3.5" fill="#FFFFFF"/>
+                <path d="M6 78 L12 78 M4 84 L10 84 M6 90 L12 90" stroke="var(--brand-red)" stroke-width="2.5" stroke-linecap="round" opacity="0.6"/>
+            </svg>
+            <span class="kavian-name">اتومبیل صمد شکرالهی</span>
+            <span class="kavian-tagline">SAMAD SHOKROLLAHI AUTO</span>
+        </div>
+
+        <h1>
+            از اولین جستجو تا خرید،<br>
+            یک <span class="accent">پلتفرم هوشمند خودرو</span>
+        </h1>
+        <p class="hero-description">
+            اتومبیل صمد شکرالهی با پلتفرم اختصاصی Code Packs به یک <strong>مجموعه داده‌محور و AI-Powered</strong> تبدیل می‌شود.
+            از موتور هوشمند قیمت‌گذاری و AI Car Finder تا CRM، کارشناسی آنلاین، فروش اقساطی و اتوماسیون چندکاناله؛
+            همه در یک اکوسیستم واحد با نام <strong>SAMAD AUTO INTELLIGENCE PLATFORM</strong>.
+        </p>
+        <div class="hero-chips">
+            <span class="hero-chip">AI Pricing Engine</span>
+            <span class="hero-chip">AI Car Finder</span>
+            <span class="hero-chip">AI Custom Agent</span>
+            <span class="hero-chip">Online Inspection</span>
+            <span class="hero-chip">Installment Platform</span>
+            <span class="hero-chip">Smart CRM</span>
+            <span class="hero-chip">Multi-Channel Publishing</span>
+            <span class="hero-chip">BI &amp; Market Analytics</span>
+        </div>
+        <div class="hero-stats">
+            <div class="hero-stat"><strong>AI-Powered</strong><span>قیمت‌گذاری و مشاوره خودرو</span></div>
+            <div class="hero-stat"><strong>۲۴/۷</strong><span>دستیار هوشمند اختصاصی</span></div>
+            <div class="hero-stat"><strong>یکپارچه</strong><span>از گالری تا مشتری نهایی</span></div>
+            <div class="hero-stat"><strong>End-to-End</strong><span>خرید، فروش، کارشناسی</span></div>
+        </div>
+    </div>
+</section>
+
+<!-- TOC -->
+<section class="toc" id="toc">
+    <div class="toc-header" id="tocHeader">
+        <div class="toc-title">
+            <span class="toc-title-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+            </span>
+            فهرست مطالب پروپوزال
+        </div>
+        <span class="toc-arrow">▼</span>
+    </div>
+    <div class="toc-links">
+        <a href="#s1"><span class="toc-num">۱</span>مقدمه و چشم‌انداز پروژه</a>
+        <a href="#s2"><span class="toc-num">۲</span>معماری کلان پلتفرم</a>
+        <a href="#s3"><span class="toc-num">۳</span>بازطراحی کامل وب‌سایت</a>
+        <a href="#s4" class="visual-link"><span class="toc-num">★</span>موتور قیمت‌گذاری هوشمند</a>
+        <a href="#s5"><span class="toc-num">۵</span>قیف فروش و فروش خودرو</a>
+        <a href="#s6" class="ai-link"><span class="toc-num">◆</span>AI Car Finder + نمایش زنده</a>
+        <a href="#s7"><span class="toc-num">۷</span>مقایسه و ابزارهای تعاملی</a>
+        <a href="#s8"><span class="toc-num">۸</span>سیستم کارشناسی آنلاین</a>
+        <a href="#s9"><span class="toc-num">۹</span>فروش اقساطی هوشمند</a>
+        <a href="#s10"><span class="toc-num">۱۰</span>مدیریت مرکزی و انتشار آگهی</a>
+        <a href="#s11"><span class="toc-num">۱۱</span>CRM هوشمند و اتوماسیون</a>
+        <a href="#s12"><span class="toc-num">۱۲</span>پیشنهاد هوشمند و جستجو</a>
+        <a href="#s13"><span class="toc-num">۱۳</span>داشبورد و SEO تخصصی</a>
+        <a href="#s14"><span class="toc-num">۱۴</span>تحلیل بازار و موجودی</a>
+        <a href="#s15"><span class="toc-num">۱۵</span>جمع‌بندی و ارزش‌آفرینی</a>
+        <a href="#s16" class="cp-link"><span class="toc-num">◆</span>معرفی Code Packs</a>
+    </div>
+</section>
+
+<!-- S1 -->
+<section class="section" id="s1">
+    <div class="section-head">
+        <span class="section-icon">۱</span>
+        <div class="section-head-content">
+            <h2 class="section-title">مقدمه و چشم‌انداز پروژه</h2>
+            <div class="section-subtitle">از یک گالری خودرو تا یک پلتفرم هوشمند خرید، فروش و مدیریت</div>
+        </div>
+    </div>
+    <div class="highlight">
+        <strong>SAMAD AUTO INTELLIGENCE PLATFORM — پلتفرم هوشمند خودرو</strong><br>
+        هدف این پروژه صرفاً بازطراحی وب‌سایت فعلی اتومبیل صمد شکرالهی نیست. هدف، ایجاد یک <strong>پلتفرم هوشمند خرید، فروش، قیمت‌گذاری، کارشناسی و مدیریت مشتری خودرو</strong> است که با استفاده از هوش مصنوعی، اتوماسیون و داده‌های بازار، فرآیند ارتباط مشتری با گالری را از اولین جستجو تا خرید یا فروش خودرو یکپارچه می‌کند.
+    </div>
+    <p>در این ساختار، وب‌سایت به‌عنوان <strong>مرکز اصلی تجربه مشتری</strong> عمل می‌کند و در پشت آن یک سیستم مرکزی شامل AI، CRM، مدیریت خودرو، قیمت‌گذاری، کارشناسی، فروش اقساطی و اتوماسیون کانال‌های ارتباطی قرار خواهد گرفت.</p>
+    <p>این پروژه نباید در ذهن کارفرما به‌عنوان «یک سایت جدید برای نمایشگاه خودرو» تعریف شود؛ بلکه باید به‌عنوان <strong>طراحی و توسعه پلتفرم هوشمند خودرو با محوریت هوش مصنوعی</strong> شناخته شود و سایت تنها <strong>ویترین این اکوسیستم</strong> است.</p>
+    <div class="highlight">
+        <strong>سه لایه اصلی که همزمان ساخته می‌شوند:</strong><br>
+        <strong>۱. Customer Experience</strong> — تجربه مدرن خرید و فروش خودرو<br>
+        <strong>۲. AI Intelligence</strong> — قیمت‌گذاری، مشاوره، پیشنهاد خودرو، تحلیل بازار و تولید لید<br>
+        <strong>۳. Business Automation</strong> — CRM، کارشناسی، انتشار آگهی، نوتیفیکیشن و مدیریت عملیات فروش
+    </div>
+    <div class="info-box info-green"><strong>هدف نهایی:</strong> تبدیل اتومبیل صمد شکرالهی به یک مجموعه داده‌محور، متصل و AI-Powered که سایت آن مرکز ثقل تجربه مشتری است.</div>
+</section>
+
+<!-- S2 -->
+<section class="section" id="s2">
+    <div class="section-head">
+        <span class="section-icon">۲</span>
+        <div class="section-head-content">
+            <h2 class="section-title">معماری کلان پلتفرم</h2>
+            <div class="section-subtitle">هوش مصنوعی در مرکز، عملیات در لایه‌های متصل</div>
+        </div>
+    </div>
+    <p>پلتفرم پیشنهادی روی یک هسته هوشمند (AI Core) بنا می‌شود که سه ماژول اصلی به آن متصل هستند و از طریق Central Platform به لایه‌های عملیاتی و اتوماسیون متصل می‌شود.</p>
+    <div class="cards">
+        <div class="card"><h4>AI Core — هسته هوشمند</h4><p>مغز متفکر پلتفرم؛ شامل موتور قیمت‌گذاری، Agent اختصاصی و تحلیل داده‌ها که در همه لایه‌ها حضور دارد.</p></div>
+        <div class="card"><h4>AI Pricing</h4><p>موتور هوشمند ارزش‌گذاری خودرو با تحلیل بازار، مکالمه طبیعی و گزارش جامع.</p></div>
+        <div class="card"><h4>AI Agent</h4><p>دستیار اختصاصی مجموعه، متصل به داده‌های داخلی برای مشاوره، پاسخ‌گویی و هدایت کاربر.</p></div>
+        <div class="card"><h4>AI CRM</h4><p>تحلیل رفتار مشتری، امتیازدهی لید و اولویت‌بندی خودکار بر اساس داده‌های واقعی.</p></div>
+        <div class="card"><h4>Central Platform</h4><p>هسته داده‌ای متمرکز که همه ماژول‌ها را به یکدیگر و به کانال‌های عملیاتی متصل می‌کند.</p></div>
+        <div class="card"><h4>Website + Vehicles + Leads + Inspection + Installment</h4><p>پنج ماژول عملیاتی اصلی که در لایه Central Platform یکپارچه هستند.</p></div>
+        <div class="card"><h4>Automation Layer</h4><p>لایه اتوماسیون که رویدادهای سیستم را به کانال‌های ارتباطی و پلتفرم‌های انتشار هدایت می‌کند.</p></div>
+        <div class="card"><h4>Telegram + Bale + Ad Platforms</h4><p>خروجی‌های اتوماسیون برای اطلاع‌رسانی داخلی و انتشار خودکار آگهی در پلتفرم‌های بیرونی.</p></div>
+    </div>
+    <div class="info-box"><strong>نکته کلیدی:</strong> همه بخش‌ها روی یک هسته داده‌ای مشترک کار می‌کنند. هیچ جزیره‌ای وجود ندارد. AI Core در تمام لایه‌ها حضور فعال دارد و داده در کل زنجیره لحظه‌ای جریان دارد.</div>
+</section>
+
+<!-- S3 -->
+<section class="section" id="s3">
+    <div class="section-head">
+        <span class="section-icon">۳</span>
+        <div class="section-head-content">
+            <h2 class="section-title">بازطراحی کامل وب‌سایت</h2>
+            <div class="section-subtitle">Mobile First — تجربه‌ای جدید برای خرید و فروش خودرو</div>
+        </div>
+    </div>
+    <p>طراحی سایت از پایه و به‌صورت اختصاصی انجام خواهد شد. هدف فقط تغییر ظاهر سایت فعلی نیست؛ بلکه ساخت یک <strong>تجربه کاربری جدید</strong> برای خرید و فروش خودرو است که در آن هر صفحه نقش مشخصی در قیف فروش ایفا می‌کند.</p>
+    <div class="highlight">
+        <strong>رویکرد طراحی:</strong><br>
+        تمام صفحات برای <strong>Mobile First</strong> طراحی می‌شوند. سرعت، وضوح، دسترسی سریع به اطلاعات کلیدی خودرو و مسیر خرید کوتاه، در همه صفحات اولویت اول است.
+    </div>
+    <div class="cards">
+        <div class="card"><h4>صفحه اصلی هوشمند</h4><p>نمایش خودروهای ویژه، پیشنهادهای شخصی‌سازی‌شده، ابزارهای سریع و ورودی به همه سرویس‌ها.</p></div>
+        <div class="card"><h4>جستجوی پیشرفته خودرو</h4><p>جستجو بر اساس برند، مدل، سال، کارکرد، بودجه، نوع بدنه و ده‌ها فیلتر تخصصی خودرو.</p></div>
+        <div class="card"><h4>لیست خودروهای موجود</h4><p>نمایش ساختاریافته موجودی گالری با مرتب‌سازی و فیلترگذاری پیشرفته.</p></div>
+        <div class="card"><h4>صفحه اختصاصی هر خودرو</h4><p>گالری تصاویر، مشخصات فنی، وضعیت بدنه، شرایط اقساط و CTAهای تماس و کارشناسی.</p></div>
+        <div class="card"><h4>مقایسه هوشمند خودروها</h4><p>امکان انتخاب چند خودرو و مقایسه پارامتریک بر اساس نیاز کاربر.</p></div>
+        <div class="card"><h4>صفحه قیمت‌گذاری</h4><p>ورود به موتور هوشمند قیمت‌گذاری خودرو با گفتگوی طبیعی.</p></div>
+        <div class="card"><h4>صفحه فروش خودرو</h4><p>معرفی خودرو توسط کاربر، دریافت اطلاعات و هدایت به فرآیند کارشناسی.</p></div>
+        <div class="card"><h4>صفحه کارشناسی</h4><p>رزرو آنلاین کارشناسی خودرو با تقویم و ثبت اطلاعات تماس.</p></div>
+        <div class="card"><h4>صفحه خرید اقساطی</h4><p>محاسبه‌گر اقساط، پیشنهاد خودرو بر اساس توان پرداخت و شرایط فروش.</p></div>
+        <div class="card"><h4>مجله خودرو</h4><p>محتوای تخصصی، راهنماهای خرید، تحلیل بازار و مقایسه‌های کاربردی.</p></div>
+        <div class="card"><h4>ابزارهای هوشمند</h4><p>مجموعه ابزارهای تعاملی برای قیمت‌گذاری، محاسبه اقساط و پیشنهاد خودرو.</p></div>
+        <div class="card"><h4>چت‌بات AI</h4><p>دستیار هوشمند با دسترسی به موجودی، مشخصات فنی و شرایط خرید.</p></div>
+        <div class="card"><h4>پنل کاربری مشتری</h4><p>مشاهده علاقه‌مندی‌ها، درخواست‌های کارشناسی، وضعیت معاملات و ارتباط با گالری.</p></div>
+        <div class="card"><h4>ارتباط با کارشناسان</h4><p>تماس مستقیم، چت و درخواست مشاوره تخصصی با کارشناس فروش.</p></div>
+        <div class="card"><h4>شعب و اطلاعات مجموعه</h4><p>معرفی شعب، موقعیت مکانی، ساعات کاری و راه‌های ارتباطی.</p></div>
+    </div>
+</section>
+
+<!-- S4 — PRICING -->
+<section class="section pricing-showcase" id="s4">
+    <div class="visual-watermark">
+        AI PRICING ENGINE
+        <span>POWERED BY MARKET DATA</span>
+    </div>
+    <div style="position: relative; z-index: 3;">
+        <div class="section-head">
+            <span class="section-icon">★</span>
+            <div class="section-head-content">
+                <h2 class="section-title">موتور هوشمند قیمت‌گذاری خودرو</h2>
+                <div class="section-subtitle">گفتگوی طبیعی + تحلیل بازار + گزارش ارزش‌گذاری</div>
+            </div>
+        </div>
+
+        <div class="visual-badge">
+            <span class="visual-badge-dot"></span>
+            AI Pricing — قلب تپنده پلتفرم
+        </div>
+
+        <div class="highlight highlight-red">
+            <strong>یکی از اصلی‌ترین قابلیت‌های پروژه:</strong><br>
+            کاربر لازم نیست فرم‌های طولانی پر کند. می‌تواند مستقیماً با AI صحبت کند و سیستم خودش اطلاعات خودرو را از مکالمه استخراج می‌کند. در صورت نیاز فقط اطلاعات ناقص را از کاربر می‌پرسد.
+        </div>
+
+        <h3>تحلیل‌های موتور قیمت‌گذاری</h3>
+        <div class="cards">
+            <div class="card"><h4>داده‌های بازار</h4><p>آگهی‌های بازار، قیمت خودروهای مشابه با شرایط متفاوت، روند تغییر قیمت.</p></div>
+            <div class="card"><h4>عوامل کلان اقتصادی</h4><p>نرخ ارز، قیمت نمایندگی، سطح عرضه و تقاضا در بازار خودرو.</p></div>
+            <div class="card"><h4>شرایط خودرو</h4><p>سال تولید، کارکرد، وضعیت بدنه، وضعیت فنی، آپشن‌ها و رنگ.</p></div>
+            <div class="card"><h4>شرایط منطقه‌ای</h4><p>منطقه جغرافیایی، شرایط بازار محلی و تقاضای خاص هر منطقه.</p></div>
+            <div class="card"><h4>داده‌های تاریخی</h4><p>روند گذشته قیمت و رفتار بازار برای پیش‌بینی دقیق‌تر.</p></div>
+            <div class="card"><h4>شاخص‌های تحلیلی</h4><p>ترکیب داده‌ها و شاخص‌های پیشرفته برای ارائه تخمین دقیق.</p></div>
+        </div>
+
+        <h3>خروجی: گزارش هوشمند ارزش‌گذاری</h3>
+        <p>خروجی صرفاً یک عدد نیست. سیستم یک <strong>گزارش کامل و شفاف</strong> ارائه می‌دهد که هم برای فروشنده ارزشمند است و هم برای خریدار شفافیت ایجاد می‌کند. این گزارش شامل <strong>ارزش تخمینی، بازه منطقی بازار، وضعیت بازار، میزان تقاضا، سطح عرضه، پیشنهاد فروش سریع، زمان تخمینی فروش، میزان اطمینان و مهم‌ترین عوامل مؤثر</strong> است.</p>
+
+        <div class="highlight highlight-red">
+            <strong>AI حتی توضیح می‌دهد:</strong><br>
+            «مهم‌ترین عوامل مؤثر بر ارزش این خودرو، مدل، کارکرد، وضعیت بدنه و سطح تقاضای فعلی بازار هستند.»
+        </div>
+
+        <div class="info-box info-red" style="text-align: center; font-size: 0.95rem; font-weight: 700;">
+            <strong>محصول نهایی: AI Pricing + Market Analysis + Sales Recommendation</strong>
+        </div>
+    </div>
+</section>
+
+<!-- S5 -->
+<section class="section" id="s5">
+    <div class="section-head">
+        <span class="section-icon">۵</span>
+        <div class="section-head-content">
+            <h2 class="section-title">تبدیل قیمت‌گذاری به قیف فروش</h2>
+            <div class="section-subtitle">ابزار قیمت‌گذاری خودش Lead Generator است</div>
+        </div>
+    </div>
+    <p>بعد از ارزش‌گذاری، سیستم کاربر را رها نمی‌کند. این نقطه، دقیقاً همان جایی است که یک بازدیدکننده معمولی به <strong>یک لید واقعی</strong> تبدیل می‌شود.</p>
+    <div class="highlight">
+        <strong>پیام AI پس از ارزش‌گذاری:</strong><br>
+        «خودروی شما حدود ۲.۸۵ میلیارد تومان ارزش‌گذاری شد. قصد فروش دارید یا قصد خرید خودروی دیگری دارید؟»
+    </div>
+
+    <h3>مسیر دوم: فروش خودرو توسط مشتری</h3>
+    <p>کاربر می‌تواند خودرو خودش را مستقیماً در سایت معرفی کند. کل فرآیند به‌صورت یکپارچه و خودکار مدیریت می‌شود:</p>
+    <div class="crm-flow">
+        <div class="crm-step"><span class="crm-step-num">۱</span><strong>گفتگو با AI</strong><p>استخراج اطلاعات خودرو از مکالمه</p></div>
+        <div class="crm-step"><span class="crm-step-num">۲</span><strong>قیمت‌گذاری</strong><p>ارزش‌گذاری خودکار بر اساس داده‌های بازار</p></div>
+        <div class="crm-step"><span class="crm-step-num">۳</span><strong>ثبت و ایجاد آگهی</strong><p>ثبت خودرو و ساخت آگهی خودکار</p></div>
+        <div class="crm-step"><span class="crm-step-num">۴</span><strong>درخواست کارشناسی</strong><p>ثبت لید و هماهنگی کارشناسی در گالری</p></div>
+    </div>
+
+    <div class="info-box info-green"><strong>نتیجه:</strong> کاربری که فقط قصد داشت قیمت خودروی خود را بداند، وارد قیف فروش می‌شود و به یک لید گرم برای گالری تبدیل می‌شود — بدون هیچ هزینه تبلیغاتی اضافه.</div>
+</section>
+
+<!-- S6 — AGENTIC + LIVE CHAT DEMO -->
+<section class="section agentic-showcase" id="s6">
+    <div class="agentic-watermark">
+        AI AGENTIC
+        <span>CAR FINDER + LIVE DEMO</span>
+    </div>
+    <div class="agentic-content">
+        <div class="section-head">
+            <span class="section-icon">◆</span>
+            <div class="section-head-content">
+                <h2 class="section-title">AI Car Finder و Agent اختصاصی اتومبیل صمد شکرالهی</h2>
+                <div class="section-subtitle">مشاور هوشمند خرید + دستیار اختصاصی متصل به سیستم داخلی + نمایش زنده</div>
+            </div>
+        </div>
+
+        <div class="agentic-badge">
+            <span class="agentic-badge-dot"></span>
+            AI Agents — سفارشی و اختصاصی
+        </div>
+
+        <h3>بخش اول: AI Car Finder — مشاور خرید هوشمند</h3>
+        <p>کاربر به‌جای جستجوی پیچیده با فیلترهای متعدد، می‌تواند مستقیماً با AI صحبت کند و نیازش را توضیح دهد:</p>
+        <div class="highlight">
+            <strong>نمونه درخواست کاربر:</strong><br>
+            «حدود ۲.۵ میلیارد بودجه دارم، اتومات می‌خوام، مصرفش پایین باشه و برای خانواده مناسب باشه.»
+        </div>
+        <p>AI نیاز کاربر را تحلیل می‌کند و از میان خودروهای موجود، گزینه‌های مناسب را پیشنهاد می‌دهد. حتی می‌تواند بودجه را تحلیل کند، شرایط اقساطی را بررسی کند، خودروهای مشابه را پیشنهاد دهد، خودروها را مقایسه کند و کاربر را به کارشناس فروش متصل کند.</p>
+
+        <h3>نمایش زنده: AI Agent در عمل 🎬</h3>
+        <p>در ادامه، یک مکالمه واقعی بین مشتری و <strong>دستیار هوشمند اتومبیل صمد شکرالهی</strong> را می‌بینید. این دمو <strong>۶ قابلیت کلیدی</strong> پلتفرم را در یک سناریو پوشش می‌دهد:</p>
+
+        <div class="ai-live-showcase">
+            <div class="ai-live-showcase-inner">
+                <div class="ai-live-content">
+                    <span class="eyebrow-ai">
+                        <span class="eyebrow-ai-dot"></span>
+                        دستیار هوشمند اختصاصی اتومبیل صمد شکرالهی
+                    </span>
+                    <h3>دستیاری که <span>اتومبیل صمد شکرالهی</span> را می‌شناسد، مشتری را می‌فهمد و هدایت می‌کند</h3>
+                    <p>
+                        این دستیار صرفاً یک چت‌بات عمومی نیست؛ به <strong>پایگاه داده گالری</strong> متصل است و در لحظه به موجودی، قیمت‌های واقعی،
+                        شرایط اقساطی و فرآیندهای گالری دسترسی دارد. با معماری <strong>RAG</strong> طراحی می‌شود تا پاسخ‌ها از دانش اختصاصی
+                        گالری استخراج شوند.
+                    </p>
+                    <div class="ai-features-grid">
+                        <div class="ai-feature"><em>💰</em>قیمت‌گذاری لحظه‌ای</div>
+                        <div class="ai-feature"><em>🎯</em>پیشنهاد خودروی متناسب</div>
+                        <div class="ai-feature"><em>📸</em>نمایش خودرو در محیط شما</div>
+                        <div class="ai-feature"><em>💳</em>محاسبه اقساط</div>
+                        <div class="ai-feature"><em>📅</em>رزرو کارشناسی</div>
+                        <div class="ai-feature"><em>🔍</em>پاسخ لحظه‌ای به موجودی</div>
+                        <div class="ai-feature"><em>🔄</em>تعویض خودرو</div>
+                        <div class="ai-feature"><em>📊</em>ثبت خودکار لید در CRM</div>
+                        <div class="ai-feature"><em>📞</em>اتصال به کارشناس فروش</div>
+                        <div class="ai-feature"><em>🧠</em>تحلیل بازار</div>
+                        <div class="ai-feature"><em>📥</em>معرفی کاتالوگ خودروها</div>
+                        <div class="ai-feature"><em>👤</em>انتقال به نیروی انسانی</div>
+                    </div>
+                </div>
+
+                <div class="chat-window">
+                    <div class="chat-head">
+                        <div class="chat-avatar">🚗</div>
+                        <div>
+                            <strong>دستیار هوشمند اتومبیل صمد شکرالهی</strong>
+                            <small>آنلاین — پاسخ‌گویی ۲۴ ساعته</small>
+                        </div>
+                    </div>
+
+                    <div class="chat-body">
+
+                        <div class="bubble ai">
+                            سلام و درود 👋 به <strong>اتومبیل صمد شکرالهی</strong> خوش آمدید. چطور می‌توانم در خرید، فروش یا تعویض خودرو کمکتان کنم؟
+                        </div>
+
+                        <div class="bubble user">
+                            یه دنا پلاس اتومات ۱۴۰۴ دارم، ۴۰ هزار کیلومتر کارکرد. می‌خوام بفروشمش و یه SUV خانوادگی اتومات بخرم.
+                        </div>
+
+                        <div class="bubble ai">
+                            عالی 🌟 برای ارائه دقیق‌ترین ارزش‌گذاری، فقط چند سؤال تکمیلی می‌پرسم:<br>
+                            • رنگ خودرو؟<br>
+                            • وضعیت بدنه و رنگ‌شدگی؟<br>
+                            • وضعیت فنی موتور و گیربکس؟
+                        </div>
+
+                        <div class="bubble user">
+                            سفید، یک لکه رنگ روی در عقب داره، فنی سالمه.
+                        </div>
+
+                        <div class="bubble ai">
+                            ✅ ممنون. در حال تحلیل داده‌های بازار و خودروهای مشابه هستم...
+                            <span class="price-mini">
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">💰 ارزش تخمینی</span>
+                                    <span class="price-mini-value">۲,۸۵۰,۰۰۰,۰۰۰ تومان</span>
+                                </div>
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">بازه منطقی بازار</span>
+                                    <span class="price-mini-value navy">۲.۷۵ تا ۲.۹۵ میلیارد</span>
+                                </div>
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">وضعیت بازار</span>
+                                    <span class="price-mini-value navy">متعادل — تقاضا: بالا</span>
+                                </div>
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">پیشنهاد فروش سریع</span>
+                                    <span class="price-mini-value">۲,۷۹۰,۰۰۰,۰۰۰ تومان</span>
+                                </div>
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">زمان تخمینی فروش</span>
+                                    <span class="price-mini-value navy">۷ تا ۱۵ روز</span>
+                                </div>
+                            </span>
+                            <br>
+                            <span class="bubble-badge">💰 محاسبه ارزش</span>
+                            <span class="bubble-badge green">✅ ثبت در CRM</span>
+                        </div>
+
+                        <div class="bubble user">
+                            عالیه! با بودجه‌ی ۳.۵ میلیارد چه SUV اتومات خانوادگی‌ای دارید؟
+                        </div>
+
+                        <div class="bubble ai">
+                            🎯 بر اساس بودجه و نیاز خانوادگی شما، این <strong>۳ گزینه</strong> رو از موجودی گالری پیشنهاد می‌کنم:
+                            <span class="car-suggest">
+                                <div class="car-card-mini">
+                                    <div><strong>توسان ۲۰۲۳</strong><span>۴۲ هزار کیلومتر — فول آپشن</span></div>
+                                    <em>۳.۴۵ میلیارد</em>
+                                </div>
+                                <div class="car-card-mini">
+                                    <div><strong>اسپورتیج ۲۰۲۲</strong><span>۵۸ هزار کیلومتر — بدون رنگ</span></div>
+                                    <em>۳.۲ میلیارد</em>
+                                </div>
+                                <div class="car-card-mini">
+                                    <div><strong>C5 AirCross ۲۰۲۳</strong><span>۳۵ هزار کیلومتر — شرکتی</span></div>
+                                    <em>۳.۱۵ میلیارد</em>
+                                </div>
+                            </span>
+                            <span class="bubble-badge navy">🎯 پیشنهاد هوشمند</span>
+                        </div>
+
+                        <div class="bubble user">
+                            توسان رو بیشتر توضیح بده. می‌خوام بدونم شرایط اقساطش چطوره؟
+                        </div>
+
+                        <div class="bubble ai">
+                            ✅ <strong>توسان ۲۰۲۳ فول آپشن</strong> — ۴۲ هزار کیلومتر، بدون تصادف، تک‌سوز.<br>
+                            💳 <strong>شرایط اقساط پیشنهادی:</strong>
+                            <span class="price-mini">
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">پیش‌پرداخت</span>
+                                    <span class="price-mini-value navy">۱.۵ میلیارد تومان</span>
+                                </div>
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">۱۲ قسط ماهانه</span>
+                                    <span class="price-mini-value">۱۶۲ میلیون تومان</span>
+                                </div>
+                                <div class="price-mini-row">
+                                    <span class="price-mini-label">۲۴ قسط ماهانه</span>
+                                    <span class="price-mini-value">۸۱ میلیون تومان</span>
+                                </div>
+                            </span>
+                            همچنین می‌تونید این خودرو رو با <strong>Pro Online</strong> در محیط واقعی خودتون ببینید. 📸
+                            <span class="bubble-badge">📸 نمایش در محیط شما</span>
+                        </div>
+
+                        <div class="bubble user">
+                            بذار برای بعد. اول می‌خوام یه کارشناس بیاد دنا رو ببینه و تأییدش کنه.
+                        </div>
+
+                        <div class="bubble ai">
+                            ✅ حتماً. برای هماهنگی <strong>کارشناسی خودرو</strong>، این بازه‌ها فردا خالیه:
+                            <br>
+                            🗓 <strong>فردا — یکشنبه ۱۵ مهر</strong><br>
+                            • ۱۰:۰۰ صبح<br>
+                            • ۱۴:۳۰ عصر<br>
+                            • ۱۷:۰۰ عصر<br>
+                            کدوم ساعت براتون مناسبه؟
+                            <span class="bubble-badge green">📅 رزرو کارشناسی</span>
+                        </div>
+
+                        <div class="bubble user">
+                            ۱۴:۳۰ عصر خوبه.
+                        </div>
+
+                        <div class="bubble ai">
+                            🎉 <strong>کارشناسی ثبت شد!</strong><br>
+                            📅 فردا یکشنبه — ساعت ۱۴:۳۰<br>
+                            📍 آدرس گالری برای شما پیامک می‌شود<br>
+                            🧑‍🔧 کارشناس: آقای رضایی<br>
+                            همچنین تیم فروش برای پیگیری تعویض خودرو با شما تماس می‌گیرد.
+                            <span class="bubble-badge green">✅ ثبت نهایی</span>
+                            <span class="bubble-badge navy">📊 CRM</span>
+                        </div>
+
+                        <div class="typing"><span></span><span></span><span></span></div>
+
+                    </div>
+
+                    <div class="chat-footer">
+                        <span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L4 7v10l8 5 8-5V7z"/><path d="M12 22V12M4 7l8 5 8-5"/></svg>
+                            RAG-based · دانش اختصاصی اتومبیل صمد شکرالهی
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box info-green">
+            <strong>نتیجه:</strong> مشتری در <strong>یک مکالمه ساده</strong> — بدون فرم پر کردن — هم قیمت خودروی فعلی‌اش را فهمید، هم ۳ گزینه SUV دید، هم شرایط اقساط را بررسی کرد، هم کارشناسی رزرو کرد، و در نهایت به یک <strong>لید گرم در CRM گالری</strong> تبدیل شد. این دقیقاً همان چیزی است که یک AI Agent واقعی را از یک چت‌بات معمولی جدا می‌کند.
+        </div>
+
+        <h3>بخش دوم: AI Agent اختصاصی گالری</h3>
+        <p>یک Agent اختصاصی برای مجموعه طراحی می‌شود که به <strong>داده‌های داخلی سیستم</strong> متصل است. این Agent می‌تواند درباره موضوعات زیر با کاربر گفتگو کند:</p>
+        <div class="cards">
+            <div class="card"><h4>خودروهای موجود</h4><p>دسترسی لحظه‌ای به موجودی واقعی گالری.</p></div>
+            <div class="card"><h4>قیمت‌ها</h4><p>قیمت‌های به‌روز و شرایط فروش هر خودرو.</p></div>
+            <div class="card"><h4>مشخصات فنی</h4><p>اطلاعات کامل فنی، آپشن‌ها و ویژگی‌های هر خودرو.</p></div>
+            <div class="card"><h4>مقایسه خودروها</h4><p>پاسخ به سوالات مقایسه‌ای بین مدل‌های مختلف.</p></div>
+            <div class="card"><h4>شرایط خرید و اقساط</h4><p>توضیح شرایط نقدی، اقساطی و پیشنهاد بهترین گزینه.</p></div>
+            <div class="card"><h4>کارشناسی و فرآیند فروش</h4><p>راهنمایی کامل درباره رزرو کارشناسی و مراحل خرید و فروش.</p></div>
+        </div>
+
+        <div class="highlight">
+            <strong>نکته مهم — تفاوت با چت‌بات معمولی:</strong><br>
+            AI صرفاً یک چت‌بات عمومی نیست؛ بلکه به <strong>داده‌ها و سیستم داخلی مجموعه</strong> متصل است. در نتیجه می‌تواند مثلاً بگوید:<br>
+            «در حال حاضر این خودرو در موجودی مجموعه موجود است.»<br>
+            «با بودجه‌ای که گفتید، این سه خودرو بیشترین تطابق را دارند.»
+        </div>
+
+        <div class="info-box info-green">
+            <strong>تعهد Code Packs:</strong> پیاده‌سازی Agent کاملاً اختصاصی برای اتومبیل صمد شکرالهی — با کدنویسی بومی، اتصال مستقیم به پایگاه داده گالری، بدون هزینه توکن و بر پایه همان زیرساخت تحویل‌شده.
+        </div>
+    </div>
+</section>
+
+<!-- S7 -->
+<section class="section" id="s7">
+    <div class="section-head">
+        <span class="section-icon">۷</span>
+        <div class="section-head-content">
+            <h2 class="section-title">مقایسه هوشمند و ابزارهای تعاملی SEO</h2>
+            <div class="section-subtitle">ابزارهایی که هم به مشتری و هم به رشد ارگانیک خدمت می‌کنند</div>
+        </div>
+    </div>
+    <p>کاربر می‌تواند چند خودرو را انتخاب کند و سیستم آن‌ها را در تمام پارامترهای مهم مقایسه کند.</p>
+    <div class="cards">
+        <div class="card"><h4>قیمت و بازار</h4><p>مقایسه قیمت، ارزش بازار، نقدشوندگی و بازار دست دوم.</p></div>
+        <div class="card"><h4>مشخصات فنی</h4><p>قدرت، مصرف سوخت، شتاب، سیستم تعلیق و سایر پارامترهای فنی.</p></div>
+        <div class="card"><h4>امکانات و ایمنی</h4><p>آپشن‌ها، سیستم‌های ایمنی، فضای داخلی و رفاه سرنشینان.</p></div>
+        <div class="card"><h4>هزینه نگهداری</h4><p>هزینه سرویس، قطعات، بیمه و نگهداری سالانه.</p></div>
+        <div class="card"><h4>افت قیمت</h4><p>روند افت ارزش و پیش‌بینی آینده قیمت هر خودرو.</p></div>
+        <div class="card"><h4>شرایط خرید و اقساط</h4><p>مقایسه شرایط نقدی و اقساطی خودروها.</p></div>
+    </div>
+
+    <h3>مقایسه متناسب با نیاز کاربر</h3>
+    <div class="highlight">
+        بخش مهم‌تر، تحلیل هوشمند مقایسه است. AI بر اساس نیاز واقعی کاربر نتیجه می‌دهد:<br>
+        «برای خانواده‌ای با استفاده شهری، گزینه A مناسب‌تر است.»<br>
+        «اگر اولویت شما بازار فروش و نقدشوندگی باشد، گزینه B شرایط بهتری دارد.»
+    </div>
+
+    <h3>ابزارهای تعاملی SEO محور</h3>
+    <p>مجموعه‌ای از ابزارهای تعاملی که هم برای جذب ورودی ارگانیک طراحی می‌شوند و هم به‌عنوان <strong>Lead Generator</strong> عمل می‌کنند:</p>
+    <div class="cards">
+        <div class="card"><h4>قیمت‌گذاری خودرو</h4><p>ابزار ارزش‌گذاری سریع خودرو بر اساس مدل، سال و کارکرد.</p></div>
+        <div class="card"><h4>محاسبه اقساط</h4><p>محاسبه‌گر اقساط با امکان انتخاب شرایط مختلف.</p></div>
+        <div class="card"><h4>مقایسه خودرو</h4><p>ابزار مقایسه سریع چند خودرو در پارامترهای کلیدی.</p></div>
+        <div class="card"><h4>پیدا کردن خودرو با بودجه</h4><p>پیشنهاد خودرو بر اساس بودجه و اولویت‌های کاربر.</p></div>
+        <div class="card"><h4>محاسبه ارزش خودرو</h4><p>ارزش‌گذاری سریع برای کاربران عجول و مقایسه‌گر.</p></div>
+        <div class="card"><h4>راهنمای انتخاب خودرو</h4><p>راهنمای گام‌به‌گام برای انتخاب خودرو متناسب با نیاز.</p></div>
+    </div>
+    <div class="info-box info-green"><strong>نتیجه:</strong> این ابزارها ترافیک ارگانیک قابل توجهی جذب می‌کنند و در لحظه‌ای که کاربر در حال تصمیم‌گیری است، او را به لید واقعی تبدیل می‌کنند.</div>
+</section>
+
+<!-- S8 -->
+<section class="section" id="s8">
+    <div class="section-head">
+        <span class="section-icon">۸</span>
+        <div class="section-head-content">
+            <h2 class="section-title">سیستم کارشناسی آنلاین</h2>
+            <div class="section-subtitle">رزرو کارشناسی خودرو با یکپارچه‌سازی مستقیم در سیستم گالری</div>
+        </div>
+    </div>
+    <p>بخش اختصاصی رزرو کارشناسی خودرو به‌صورت یکپارچه به سیستم مرکزی گالری متصل می‌شود و تمام فرآیند را از لحظه رزرو تا انجام کارشناسی پوشش می‌دهد.</p>
+    <div class="highlight">
+        <strong>فرآیند رزرو کارشناسی:</strong><br>
+        کاربر خودرو را انتخاب می‌کند ← اطلاعات را ثبت می‌کند ← نوع خدمت را انتخاب می‌کند ← تاریخ را انتخاب می‌کند ← ساعت را رزرو می‌کند ← اطلاعات فوراً وارد سیستم مجموعه می‌شود.
+    </div>
+    <h3>اطلاعات لید کارشناسی</h3>
+    <div class="cards">
+        <div class="card"><h4>اطلاعات تماس</h4><p>نام و شماره تماس کاربر برای هماهنگی‌های بعدی.</p></div>
+        <div class="card"><h4>اطلاعات خودرو</h4><p>مدل، سال، کارکرد و وضعیت خودرو مورد کارشناسی.</p></div>
+        <div class="card"><h4>نوع درخواست</h4><p>کارشناسی فنی، بدنه، کامل یا خدمات خاص.</p></div>
+        <div class="card"><h4>زمان مراجعه</h4><p>تاریخ و ساعت رزرو شده توسط کاربر.</p></div>
+        <div class="card"><h4>توضیحات مشتری</h4><p>هر نکته اضافی که مشتری مطرح کرده است.</p></div>
+        <div class="card"><h4>وضعیت پیگیری</h4><p>پیگیری خودکار تا انجام کارشناسی و پس از آن.</p></div>
+    </div>
+    <div class="info-box info-green"><strong>نتیجه:</strong> کارشناسی از یک فرآیند تلفنی و پراکنده به یک فرآیند دیجیتال شفاف و قابل پیگیری تبدیل می‌شود.</div>
+</section>
+
+<!-- S9 -->
+<section class="section" id="s9">
+    <div class="section-head">
+        <span class="section-icon">۹</span>
+        <div class="section-head-content">
+            <h2 class="section-title">سیستم فروش اقساطی هوشمند</h2>
+            <div class="section-subtitle">از ماشین‌حساب ساده تا موتور پیشنهاد خودرو</div>
+        </div>
+    </div>
+    <p>برای هر خودرو، شرایط خرید اقساطی قابل تعریف خواهد بود. مدیریت مجموعه می‌تواند پارامترهای کامل فروش اقساطی را کنترل کند.</p>
+    <h3>مدیریت شرایط فروش اقساطی</h3>
+    <div class="cards">
+        <div class="card"><h4>درصد پیش‌پرداخت</h4><p>تعریف درصد پیش‌پرداخت متناسب با هر خودرو یا هر مشتری.</p></div>
+        <div class="card"><h4>مبلغ پیش‌پرداخت</h4><p>تعیین مبلغ دقیق پیش‌پرداخت بر اساس سیاست گالری.</p></div>
+        <div class="card"><h4>تعداد اقساط</h4><p>تعریف بازه‌های مختلف تعداد اقساط برای هر خودرو.</p></div>
+        <div class="card"><h4>مبلغ هر قسط</h4><p>محاسبه دقیق مبلغ اقساط بر اساس شرایط تعیین‌شده.</p></div>
+        <div class="card"><h4>شرایط مختلف فروش</h4><p>تعریف چند سناریوی متفاوت برای فروش اقساطی هر خودرو.</p></div>
+        <div class="card"><h4>پیشنهاد هوشمند</h4><p>انتخاب خودکار بهترین شرایط اقساطی بر اساس پروفایل مشتری.</p></div>
+    </div>
+
+    <h3>Reverse Calculator — ماشین‌حساب معکوس</h3>
+    <div class="highlight">
+        <strong>نمونه سناریو:</strong><br>
+        کاربر می‌گوید: «من ماهی ۵۰ میلیون توان پرداخت دارم.»<br>
+        سیستم با تحلیل این اطلاعات، <strong>خودروهای قابل خرید</strong> از موجودی گالری را پیشنهاد می‌دهد.
+    </div>
+    <div class="info-box info-red"><strong>تفاوت کلیدی:</strong> سیستم اقساط فقط یک ماشین‌حساب نیست؛ به <strong>موتور پیشنهاد خودرو</strong> متصل است. یعنی کاربر با توان پرداخت مشخص، بلافاصله می‌بیند چه گزینه‌هایی در دسترس دارد.</div>
+</section>
+
+<!-- S10 -->
+<section class="section" id="s10">
+    <div class="section-head">
+        <span class="section-icon">۱۰</span>
+        <div class="section-head-content">
+            <h2 class="section-title">مدیریت مرکزی و انتشار خودکار آگهی</h2>
+            <div class="section-subtitle">Single Source of Truth — یک بار ثبت، انتشار چندکاناله</div>
+        </div>
+    </div>
+
+    <h3>مدیریت مرکزی خودروها</h3>
+    <p>تمام خودروها از یک پنل مرکزی مدیریت می‌شوند. برای هر خودرو، همه اطلاعات در یک پنل یکپارچه کنترل می‌شود:</p>
+    <div class="cards">
+        <div class="card"><h4>مشخصات و تصاویر</h4><p>مشخصات فنی، تصاویر، رنگ و آپشن‌های هر خودرو.</p></div>
+        <div class="card"><h4>قیمت و موجودی</h4><p>قیمت به‌روز، وضعیت موجودی، وضعیت فروش هر خودرو.</p></div>
+        <div class="card"><h4>شرایط اقساط</h4><p>شرایط فروش اقساطی اختصاصی هر خودرو.</p></div>
+        <div class="card"><h4>بازدید و لید</h4><p>تعداد بازدید، لیدها و درخواست‌های مرتبط با خودرو.</p></div>
+        <div class="card"><h4>کارشناسی</h4><p>درخواست‌های کارشناسی مرتبط با خودرو و وضعیت آن‌ها.</p></div>
+        <div class="card"><h4>تاریخ ورود و فروش</h4><p>تاریخ ورود به گالری و تاریخ فروش برای تحلیل سرعت گردش.</p></div>
+    </div>
+
+    <h3>انتشار خودکار آگهی</h3>
+    <p>ثبت خودرو فقط <strong>یک بار</strong> انجام می‌شود. سیستم به‌صورت خودکار محتوای مناسب تولید می‌کند و برای کانال‌های مختلف آماده می‌سازد.</p>
+    <div class="highlight">
+        <strong>کانال‌های انتشار خودکار:</strong><br>
+        سایت اختصاصی • Telegram • Bale • سایر کانال‌های متصل • پلتفرم‌های آگهی مانند دیوار و شیپور <em>(در صورت فراهم بودن دسترسی API یا روش رسمی قابل اتکا)</em>
+    </div>
+
+    <h3>Single Source of Truth — مدیریت قیمت</h3>
+    <p>مدیر فقط در سیستم مرکزی قیمت را تغییر می‌دهد. سپس سیستم تغییرات را برای همه کانال‌های متصل اعمال می‌کند.</p>
+    <div class="crm-flow">
+        <div class="crm-step"><span class="crm-step-num">۱</span><strong>قیمت مرکزی</strong><p>به‌روزرسانی قیمت در پنل مدیریت</p></div>
+        <div class="crm-step"><span class="crm-step-num">۲</span><strong>Website</strong><p>اعمال خودکار در سایت</p></div>
+        <div class="crm-step"><span class="crm-step-num">۳</span><strong>Telegram + Bale</strong><p>انتشار خودکار در کانال‌ها</p></div>
+        <div class="crm-step"><span class="crm-step-num">۴</span><strong>پلتفرم‌های آگهی</strong><p>همگام‌سازی با پلتفرم‌های متصل</p></div>
+    </div>
+
+    <h3>AI تولید محتوای آگهی</h3>
+    <p>اپراتور فقط اطلاعات خودرو را ثبت می‌کند. AI تولید می‌کند:</p>
+    <div class="cards">
+        <div class="card"><h4>عنوان و توضیحات</h4><p>عنوان جذاب و توضیحات کامل و حرفه‌ای برای آگهی.</p></div>
+        <div class="card"><h4>مشخصات و نقاط قوت</h4><p>مشخصات فنی به‌صورت ساختاریافته و برجسته‌سازی نقاط قوت خودرو.</p></div>
+        <div class="card"><h4>متن تبلیغاتی</h4><p>متن تبلیغاتی و SEO محور برای جذب ترافیک.</p></div>
+        <div class="card"><h4>متن اختصاصی هر پلتفرم</h4><p>متن متناسب با Telegram، Bale و پلتفرم‌های آگهی.</p></div>
+    </div>
+    <div class="info-box info-green"><strong>نتیجه:</strong> حذف ورود اطلاعات تکراری، کاهش خطای انسانی و انتشار سریع خودرو در همه کانال‌ها از یک نقطه واحد.</div>
+</section>
+
+<!-- S11 -->
+<section class="section" id="s11">
+    <div class="section-head">
+        <span class="section-icon">۱۱</span>
+        <div class="section-head-content">
+            <h2 class="section-title">CRM هوشمند و اتوماسیون داخلی</h2>
+            <div class="section-subtitle">از اولین تماس تا فروش — همه چیز در یک پروفایل</div>
+        </div>
+    </div>
+    <p>تمام تعاملات مشتری در سیستم ثبت می‌شود. هر مشتری یک پروفایل واحد دارد که همه اطلاعات را در یک نگاه نشان می‌دهد.</p>
+    <div class="highlight">
+        <strong>نمونه پروفایل مشتری در CRM:</strong><br>
+        <strong>علی رضایی</strong> • بودجه: ۲.۵ میلیارد • علاقه‌مند به SUV • خودروهای بررسی‌شده: X / Y • درخواست کارشناسی: دارد • خرید اقساطی: بله • آخرین تعامل: امروز • وضعیت: لید گرم
+    </div>
+
+    <h3>Lead Scoring — اولویت‌بندی هوشمند</h3>
+    <p>AI می‌تواند لیدها را تحلیل و اولویت‌بندی کند:</p>
+    <div class="crm-flow">
+        <div class="crm-step"><span class="crm-step-num">🔥</span><strong>Hot Lead</strong><p>آماده خرید — تمرکز فوری تیم فروش</p></div>
+        <div class="crm-step"><span class="crm-step-num">⚡</span><strong>Warm Lead</strong><p>علاقه‌مند — پیگیری مستمر</p></div>
+        <div class="crm-step"><span class="crm-step-num">❄️</span><strong>Cold Lead</strong><p>نیازمند پرورش — اتوماسیون محتوایی</p></div>
+        <div class="crm-step"><span class="crm-step-num">📊</span><strong>تحلیل رفتار</strong><p>AI هر لید را بر اساس داده‌های واقعی رتبه‌بندی می‌کند</p></div>
+    </div>
+
+    <h3>پیگیری خودکار مشتری</h3>
+    <p>سیستم می‌تواند وضعیت لیدها را به‌صورت خودکار مدیریت کند و در صورت فراموشی، هشدار دهد.</p>
+    <div class="highlight">
+        <strong>مسیر لید:</strong><br>
+        New Lead → Contacted → Interested → Inspection → Negotiation → Sold
+    </div>
+
+    <div class="bot-service" style="margin-top: 24px;">
+        <div class="bot-service-top">
+            <div class="bot-service-title">
+                <span>اتصال اختصاصی — بله و تلگرام</span>
+                <h3>نوتیفیکیشن و اتوماسیون داخلی</h3>
+            </div>
+        </div>
+        <p>تمام اتفاقات مهم سیستم به‌صورت خودکار به کانال‌های اختصاصی <strong>بله و تلگرام</strong> ارسال می‌شود. هر واحد فقط اطلاعات مربوط به خودش را دریافت می‌کند.</p>
+        <div class="bot-grid">
+            <div class="bot-item"><strong>واحد فروش</strong><p>لید جدید ثبت شد — ارسال فوری اطلاعات کامل به تیم فروش</p></div>
+            <div class="bot-item"><strong>واحد کارشناسی</strong><p>رزرو کارشناسی جدید — اطلاع‌رسانی به تیم کارشناسی</p></div>
+            <div class="bot-item"><strong>مدیریت</strong><p>خودروی جدید ثبت شد — اطلاع به مدیریت و واحد بازاریابی</p></div>
+            <div class="bot-item"><strong>پشتیبانی</strong><p>مشتری درخواست تماس داده است — هشدار فوری به تیم پشتیبانی</p></div>
+            <div class="bot-item"><strong>قیمت‌گذاری</strong><p>درخواست قیمت‌گذاری جدید — اطلاع به تیم ارزش‌گذاری</p></div>
+            <div class="bot-item"><strong>گزارش مدیریتی</strong><p>KPI روزانه، هشدارهای مهم و خلاصه عملکرد واحدها</p></div>
+        </div>
+        <div class="bot-goal"><strong>نتیجه:</strong> هر فرد، اطلاعات درست را در زمان درست دریافت می‌کند و سرعت واکنش گالری به‌طور محسوس افزایش می‌یابد.</div>
+    </div>
+</section>
+
+<!-- S12 -->
+<section class="section" id="s12">
+    <div class="section-head">
+        <span class="section-icon">۱۲</span>
+        <div class="section-head-content">
+            <h2 class="section-title">پیشنهاد هوشمند، جستجوی طبیعی و ثبت خودرو با عکس</h2>
+            <div class="section-subtitle">تجربه شخصی‌سازی‌شده برای هر مشتری</div>
+        </div>
+    </div>
+
+    <h3>Personalized Vehicle Recommendation</h3>
+    <p>AI رفتار کاربر را تحلیل می‌کند و خودروهای مناسب را پیشنهاد می‌دهد. سیستم بر اساس این داده‌ها تصمیم می‌گیرد:</p>
+    <div class="cards">
+        <div class="card"><h4>خودروهای مشاهده‌شده</h4><p>تحلیل علاقه‌مندی‌های واقعی کاربر بر اساس بازدیدها.</p></div>
+        <div class="card"><h4>جستجوها</h4><p>تحلیل الگوی جستجو برای درک نیاز واقعی کاربر.</p></div>
+        <div class="card"><h4>بودجه</h4><p>تطبیق پیشنهادها با بودجه اعلامی یا استنباطی کاربر.</p></div>
+        <div class="card"><h4>مقایسه‌ها</h4><p>تحلیل مقایسه‌های انجام‌شده برای درک اولویت‌های کاربر.</p></div>
+        <div class="card"><h4>گفتگوها</h4><p>استخراج نیاز از مکالمات با AI و تبدیل به پیشنهاد.</p></div>
+        <div class="card"><h4>درخواست‌ها</h4><p>تحلیل درخواست‌های کارشناسی و قیمت‌گذاری برای پیشنهاد دقیق.</p></div>
+    </div>
+
+    <h3>جستجوی طبیعی (Natural Language Search)</h3>
+    <div class="highlight">
+        <strong>به‌جای فیلترهای سنتی، کاربر می‌نویسد:</strong><br>
+        «یک SUV تا ۳ میلیارد، اتومات، کم‌کار و مناسب خانواده می‌خوام.»<br>
+        سیستم مفهوم درخواست را درک می‌کند و نتایج مناسب را نمایش می‌دهد.
+    </div>
+
+    <h3>ثبت خودرو با عکس</h3>
+    <p>یکی از قابلیت‌های AI دریافت عکس خودرو است. کاربر عکس را ارسال می‌کند و سیستم اطلاعات اولیه خودرو را تا حد امکان شناسایی می‌کند.</p>
+    <div class="info-box info-green"><strong>توسعه آینده:</strong> این قابلیت می‌تواند در آینده به ماژول‌های تشخیص ظاهری و بررسی وضعیت خودرو نیز توسعه داده شود.</div>
+</section>
+
+<!-- S13 -->
+<section class="section" id="s13">
+    <div class="section-head">
+        <span class="section-icon">۱۳</span>
+        <div class="section-head-content">
+            <h2 class="section-title">داشبورد مدیریتی و SEO تخصصی خودرو</h2>
+            <div class="section-subtitle">تصمیم‌گیری داده‌محور + تبدیل سایت به مرجع آنلاین خودرو</div>
+        </div>
+    </div>
+    <p>مدیریت مجموعه یک داشبورد جامع خواهد داشت که همه ابعاد کسب‌وکار را در یک نگاه نشان می‌دهد.</p>
+    <div class="cards">
+        <div class="card"><h4>فروش</h4><p>فروش روزانه، ماهانه، تعداد خودرو و ارزش معاملات.</p></div>
+        <div class="card"><h4>موجودی</h4><p>خودروهای موجود، فروخته‌شده، راکد و مدت حضور هر خودرو در گالری.</p></div>
+        <div class="card"><h4>لیدها</h4><p>تعداد لید، منبع لید، لیدهای داغ و نرخ تبدیل.</p></div>
+        <div class="card"><h4>کارشناسی</h4><p>تعداد رزرو، ظرفیت، وضعیت و بازدهی واحد کارشناسی.</p></div>
+        <div class="card"><h4>بازاریابی</h4><p>ورودی Google، SEO، شبکه‌های اجتماعی و عملکرد کانال‌ها.</p></div>
+        <div class="card"><h4>AI</h4><p>تعداد گفتگوها، قیمت‌گذاری‌ها، پیشنهادهای خودرو و لیدهای ایجادشده.</p></div>
+    </div>
+
+    <h3>SEO تخصصی خودرو</h3>
+    <p>هدف فقط سئو چند کلمه کلیدی نیست. هدف تبدیل سایت به یک <strong>مرجع آنلاین خودرو</strong> است. ساخت صفحات هوشمند و داینامیک برای:</p>
+    <div class="cards">
+        <div class="card"><h4>قیمت خودرو و قیمت روز</h4><p>صفحات پویا برای قیمت هر مدل و به‌روزرسانی لحظه‌ای.</p></div>
+        <div class="card"><h4>خرید و فروش خودرو</h4><p>صفحات اختصاصی برای فرآیند خرید و فروش هر مدل.</p></div>
+        <div class="card"><h4>خرید اقساطی</h4><p>صفحات اقساط اختصاصی هر خودرو با محتوای به‌روز.</p></div>
+        <div class="card"><h4>کارشناسی</h4><p>صفحات تخصصی کارشناسی خودرو و راهنمای انتخاب.</p></div>
+        <div class="card"><h4>مقایسه خودرو</h4><p>صفحات مقایسه داینامیک بین مدل‌های پرجستجو.</p></div>
+        <div class="card"><h4>مشخصات خودرو</h4><p>صفحات فنی و ساختاریافته برای هر خودرو.</p></div>
+        <div class="card"><h4>راهنمای خرید</h4><p>محتوای تخصصی برای کمک به تصمیم خرید.</p></div>
+        <div class="card"><h4>خودروهای موجود</h4><p>صفحات پویا از موجودی گالری برای همه مدل‌ها.</p></div>
+        <div class="card"><h4>محتوای تخصصی</h4><p>مقالات تحلیلی، اخبار بازار و روند قیمت‌ها.</p></div>
+    </div>
+    <div class="info-box info-green"><strong>اتصال مهم:</strong> تمام این صفحات به ابزارهای هوشمند (قیمت‌گذاری، اقساط، مقایسه و Car Finder) متصل می‌شوند تا هر ورودی ارگانیک به یک فرصت واقعی فروش تبدیل شود.</div>
+</section>
+
+<!-- S14 -->
+<section class="section" id="s14">
+    <div class="section-head">
+        <span class="section-icon">۱۴</span>
+        <div class="section-head-content">
+            <h2 class="section-title">تحلیل بازار و مدیریت هوشمند موجودی</h2>
+            <div class="section-subtitle">از تحلیل روند بازار تا پیشنهاد قیمت برای فروش سریع</div>
+        </div>
+    </div>
+
+    <h3>سیستم تحلیل بازار خودرو</h3>
+    <p>در صورت دسترسی به داده‌های معتبر، سیستم می‌تواند روند بازار را تحلیل کند و در پنل مدیریت هشدارهای هوشمند ارائه دهد.</p>
+    <div class="cards">
+        <div class="card"><h4>تغییرات قیمت</h4><p>روند قیمتی خودروها در بازه‌های زمانی مختلف.</p></div>
+        <div class="card"><h4>عرضه و تقاضا</h4><p>تحلیل عرضه و تقاضای بازار برای هر مدل خودرو.</p></div>
+        <div class="card"><h4>خودروهای پرتقاضا</h4><p>شناسایی مدل‌هایی که تقاضای بازار برایشان بالاست.</p></div>
+        <div class="card"><h4>خودروهای کم‌تقاضا</h4><p>شناسایی مدل‌هایی که باید روی فروش آن‌ها تمرکز بیشتری شود.</p></div>
+        <div class="card"><h4>روند قیمت مدل‌ها</h4><p>تحلیل جداگانه روند قیمت برای هر مدل خودرو.</p></div>
+        <div class="card"><h4>هشدارهای هوشمند</h4><p>مثلاً: «این خودرو در ۳۰ روز گذشته روند قیمتی نزولی داشته است.» یا «تقاضا برای این مدل افزایش پیدا کرده است.»</p></div>
+    </div>
+
+    <h3>موتور پیشنهاد فروش سریع</h3>
+    <div class="highlight">
+        سیستم فقط نمی‌گوید «قیمت خودرو X تومان است.» بلکه می‌گوید:<br>
+        <strong>«اگر هدف شما فروش سریع است، قیمت پیشنهادی سیستم X است.»</strong><br>
+        و بر اساس داده‌های بازار، تحلیل می‌کند:<br>
+        <strong>قیمت ↔ تقاضا ↔ عرضه ↔ زمان احتمالی فروش</strong>
+    </div>
+
+    <h3>مدیریت هوشمند موجودی</h3>
+    <p>مدیریت می‌تواند ببیند کدام خودرو:</p>
+    <ul>
+        <li>سریع فروخته می‌شود و باید جایگزین شود</li>
+        <li>مدت زیادی در گالری مانده و نیاز به اقدام دارد</li>
+        <li>تقاضای بالایی در بازار دارد</li>
+        <li>نیاز به اصلاح قیمت دارد</li>
+        <li>بازدید زیادی دارد ولی تبدیل پایین است</li>
+    </ul>
+    <div class="info-box info-green"><strong>پیشنهاد خودکار AI:</strong> «قیمت این خودرو برای افزایش احتمال فروش نیاز به بازبینی دارد.» — این قابلیت مستقیماً به <strong>افزایش سود و کاهش خواب سرمایه</strong> کمک می‌کند.</div>
+</section>
+
+<!-- S15 -->
+<section class="section" id="s15">
+    <div class="section-head">
+        <span class="section-icon">۱۵</span>
+        <div class="section-head-content">
+            <h2 class="section-title">جمع‌بندی و ارزش‌آفرینی پروژه</h2>
+            <div class="section-subtitle">سه تجربه یکپارچه برای سه مخاطب متفاوت</div>
+        </div>
+    </div>
+    <p>در نهایت، اتومبیل صمد شکرالهی صاحب یک <strong>اکوسیستم دیجیتال یکپارچه خودرو</strong> خواهد شد که برای هر سه مخاطب کلیدی، تجربه‌ای متفاوت و ارزشمند فراهم می‌کند.</p>
+
+    <h3>تجربه یکپارچه برای سه مخاطب</h3>
+    <div class="highlight">
+        <strong>برای مشتری (خریدار):</strong><br>
+        جستجو → گفتگو با AI → پیدا کردن خودرو → مقایسه → قیمت‌گذاری → اقساط → کارشناسی → خرید
+    </div>
+    <div class="highlight">
+        <strong>برای فروشنده خودرو:</strong><br>
+        ثبت خودرو → ارزش‌گذاری → آگهی → کارشناسی → دریافت مشتری → فروش
+    </div>
+    <div class="highlight">
+        <strong>برای مجموعه (گالری):</strong><br>
+        موجودی → قیمت‌گذاری → لید → CRM → کارشناسی → فروش → تحلیل → اتوماسیون
+    </div>
+
+    <h3>ارزش‌آفرینی مستقیم برای گالری</h3>
+    <div class="highlight highlight-red">
+        <strong>هر بخش از پروژه، یک خروجی تجاری مشخص دارد:</strong><br>
+        <strong>قیمت‌گذاری هوشمند</strong> → تبدیل بازدیدکننده به لید • <strong>AI Agent</strong> → پاسخ‌گویی ۲۴/۷ و افزایش تبدیل • <strong>AI Car Finder</strong> → هدایت دقیق‌تر مشتری به خودرو مناسب • <strong>کارشناسی آنلاین</strong> → رزروهای بیشتر با فرآیند ساده • <strong>فروش اقساطی هوشمند</strong> → افزایش دسترسی مشتریان • <strong>انتشار خودکار آگهی</strong> → صرفه‌جویی زمان و پوشش گسترده‌تر • <strong>Single Source of Truth</strong> → حذف خطای قیمت • <strong>CRM هوشمند</strong> → افزایش پیگیری و حفظ مشتری • <strong>نوتیفیکیشن سازمانی</strong> → واکنش سریع‌تر تیم‌ها • <strong>SEO تخصصی خودرو</strong> → رشد ارگانیک پایدار • <strong>ابزارهای تعاملی</strong> → جذب لید بدون هزینه تبلیغاتی • <strong>تحلیل بازار</strong> → تصمیم‌گیری بهتر • <strong>مدیریت هوشمند موجودی</strong> → کاهش خواب سرمایه و افزایش سود
+    </div>
+
+    <div class="info-box info-red"><strong>جمع‌بندی:</strong> این پروژه صرفاً <strong>Website Redesign</strong> نیست. ترکیبی است از <strong>Digital Transformation, E-Commerce, AI Pricing, AI Agent, CRM, Inspection, Installment, Automation, Multi-Channel Publishing, SEO و Business Intelligence</strong> — که همه در یک پلتفرم واحد با محوریت هوش مصنوعی قرار می‌گیرند.</div>
+</section>
+
+<!-- CP DIVIDER -->
+<div class="cp-divider">
+    <span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z"/></svg>
+        معرفی شرکت اجرایی پروژه
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z"/></svg>
+    </span>
+</div>
+
+<!-- S16 — CP SHOWCASE -->
+<section class="section cp-showcase" id="s16">
+    <div class="cp-header">
+        <div class="cp-badge">
+            <span class="cp-badge-dot"></span>
+            About Code Packs
+        </div>
+        <div class="cp-logo-row">
+            <span class="cp-logo-mark">
+                <svg viewBox="0 0 40 40" fill="none">
+                    <path d="M4 6 H14 L10 14 L14 22 H4 L8 14 Z" fill="#FFFFFF"/>
+                    <path d="M4 22 H14 L10 30 L14 38 H4 L8 30 Z" fill="#FFFFFF" opacity="0.7"/>
+                    <circle cx="30" cy="14" r="6" stroke="#FFFFFF" stroke-width="2" fill="none"/>
+                    <path d="M22 32 L30 24 L38 32" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" fill="none"/>
+                </svg>
+            </span>
+            <div class="cp-logo-text">
+                <h2>Code Packs</h2>
+                <p>Intelligent Digital Solutions</p>
+            </div>
+        </div>
+        <p class="cp-tagline">
+            تیمی که این پروپوزال را برای اتومبیل صمد شکرالهی طراحی کرده است —
+            <strong>۶ تخصص مکمل</strong>، از طراحی و توسعه تا هوش مصنوعی و اتوماسیون؛ همه در یک تیم هماهنگ.
+        </p>
+    </div>
+
+    <div class="cp-stats">
+        <div class="cp-stat"><strong>۶</strong><span>تخصص مکمل در یک تیم</span></div>
+        <div class="cp-stat"><strong>۱۲+</strong><span>پروژه صنعتی و دیجیتال</span></div>
+        <div class="cp-stat"><strong>۱۰۰٪</strong><span>کدنویسی اختصاصی و بومی</span></div>
+        <div class="cp-stat"><strong>End-to-End</strong><span>از طراحی تا استقرار و پشتیبانی</span></div>
+    </div>
+
+    <div class="cp-subhead"><h3>تیم Code Packs — ۶ تخصص مکمل</h3></div>
+    <div class="cp-team-grid">
+        <div class="cp-team-card">
+            <div class="cp-team-avatar">AI</div>
+            <h4>متخصص هوش مصنوعی و اتوماسیون</h4>
+            <div class="cp-role">AI &amp; Automation Specialist</div>
+            <div class="cp-team-skills"><span>AI</span><span>n8n</span><span>RAG</span></div>
+        </div>
+        <div class="cp-team-card">
+            <div class="cp-team-avatar">MK</div>
+            <h4>مسئول مارکتینگ و تبلیغات</h4>
+            <div class="cp-role">Marketing &amp; Advertising</div>
+            <div class="cp-team-skills"><span>B2B</span><span>Ads</span><span>Growth</span></div>
+        </div>
+        <div class="cp-team-card">
+            <div class="cp-team-avatar">DA</div>
+            <h4>تحلیل‌گر داده، سئو و فرآیند</h4>
+            <div class="cp-role">Data, SEO &amp; Process Analyst</div>
+            <div class="cp-team-skills"><span>SEO</span><span>Analytics</span><span>Research</span></div>
+        </div>
+        <div class="cp-team-card">
+            <div class="cp-team-avatar">CT</div>
+            <h4>تولیدکننده محتوای استراتژیک</h4>
+            <div class="cp-role">Content Strategist</div>
+            <div class="cp-team-skills"><span>Content</span><span>Copy</span><span>Media</span></div>
+        </div>
+        <div class="cp-team-card">
+            <div class="cp-team-avatar">FE</div>
+            <h4>توسعه‌دهنده فرانت‌اند و لندینگ</h4>
+            <div class="cp-role">Frontend Developer</div>
+            <div class="cp-team-skills"><span>UI/UX</span><span>NextJS</span><span>Performance</span></div>
+        </div>
+        <div class="cp-team-card">
+            <div class="cp-team-avatar">PM</div>
+            <h4>مدیر پروژه و هماهنگی</h4>
+            <div class="cp-role">Project Manager</div>
+            <div class="cp-team-skills"><span>Agile</span><span>Reporting</span><span>QA</span></div>
+        </div>
+    </div>
+
+    <div class="cp-subhead"><h3>پروژه‌های شاخص Code Packs</h3></div>
+    <div class="cp-portfolio">
+        <article class="cp-project">
+            <span class="cp-project-num">۰۱</span>
+            <span class="cp-project-type">INDUSTRIAL + ERP</span>
+            <h4>گروه صنعتی امکو</h4>
+            <p>طراحی وب‌سایت اختصاصی و پیاده‌سازی ERP هوشمند یکپارچه Code Packs برای مجموعه صنعتی، توسعه فروشگاه آنلاین، تولید محتوا، سئو و فعالیت‌های دیجیتال مارکتینگ.</p>
+            <div class="cp-project-tags"><span>Website</span><span>E-Commerce</span><span>ERP</span><span>Panel</span><span>SEO</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۲</span>
+            <span class="cp-project-type">INDUSTRIAL + AI</span>
+            <h4>پویان باتری</h4>
+            <p>توسعه وب‌سایت اختصاصی، SEO و ساختار محتوایی در کنار QR Code گارانتی و قابلیت‌های هوشمند برای بهبود تجربه پس از خرید و ارتباط مشتری با برند.</p>
+            <div class="cp-project-tags"><span>Website</span><span>AI</span><span>QR System</span><span>SEO</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۳</span>
+            <span class="cp-project-type">DIGITAL TRANSFORMATION</span>
+            <h4>پگاه باتری</h4>
+            <p>طراحی و توسعه سایت، سئو و تولید محتوا در کنار طراحی راهکارهای هوش مصنوعی و اتوماسیون برای توسعه زیرساخت دیجیتال مجموعه.</p>
+            <div class="cp-project-tags"><span>AI</span><span>Automation</span><span>Website</span><span>Content</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۴</span>
+            <span class="cp-project-type">DIGITAL BRAND</span>
+            <h4>بازارتکس</h4>
+            <p>طراحی سایت اختصاصی، معماری محتوا و SEO با تمرکز بر ایجاد حضور دیجیتال حرفه‌ای و توسعه مسیرهای جذب مشتری.</p>
+            <div class="cp-project-tags"><span>Website</span><span>Content</span><span>SEO</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۵</span>
+            <span class="cp-project-type">INDUSTRIAL WEBSITE</span>
+            <h4>پاور کنترل</h4>
+            <p>طراحی سایت اختصاصی، سئو و تولید محتوا برای ارائه ساختاریافته محصولات و خدمات یک مجموعه تخصصی در فضای دیجیتال.</p>
+            <div class="cp-project-tags"><span>Website</span><span>SEO</span><span>Content</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۶</span>
+            <span class="cp-project-type">SOFTWARE PLATFORM</span>
+            <h4>Gymmy</h4>
+            <p>طراحی سایت و توسعه نرم‌افزار مدیریت باشگاه‌های ورزشی با تمرکز بر مدیریت کاربران، فرآیندهای اجرایی، اطلاعات و زیرساخت نرم‌افزاری مجموعه.</p>
+            <div class="cp-project-tags"><span>Software</span><span>Management</span><span>Website</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۷</span>
+            <span class="cp-project-type">AI + REAL ESTATE</span>
+            <h4>اتوماسیون هوشمند املاک بزرگان</h4>
+            <p>توسعه زیرساخت دیجیتال در کنار چت‌بات هوشمند، RAG، مدیریت و پیگیری اطلاعات مشتریان؛ با تمرکز بر ترکیب حضور دیجیتال و فرآیند واقعی جذب و پاسخ‌گویی به Leadها.</p>
+            <div class="cp-project-tags"><span>AI</span><span>RAG</span><span>CRM</span><span>Website</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۸</span>
+            <span class="cp-project-type">AI AUTOMATION</span>
+            <h4>سامانه اتوماسیون بیزینس کوچینگ صادرات</h4>
+            <p>طراحی پلتفرم دیجیتال، Voice AI، n8n، تحلیل جلسات، استخراج وظایف، مدیریت فرآیندها و داشبورد مدیریتی برای تبدیل عملیات دستی و پراکنده به Workflow هوشمند.</p>
+            <div class="cp-project-tags"><span>Voice AI</span><span>n8n</span><span>Dashboard</span><span>Automation</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۰۹</span>
+            <span class="cp-project-type">MANAGEMENT SYSTEM</span>
+            <h4>نرم‌افزار اتوماسیون دهکده ورزشی</h4>
+            <p>توسعه سامانه یکپارچه مدیریت اعضا، ثبت‌نام، امور مالی، صدور قبوض، رویدادها و فرآیندهای اجرایی در کنار طراحی سایت و زیرساخت دیجیتال مجموعه.</p>
+            <div class="cp-project-tags"><span>Automation</span><span>Management</span><span>Dashboard</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۱۰</span>
+            <span class="cp-project-type">COFFEE / DIGITAL BRAND</span>
+            <h4>قهوه آرگن</h4>
+            <p>تجربه اجرایی تیم Code Packs در حوزه برند قهوه؛ تجربه‌ای مرتبط با فضای محصول و بازار که نشان‌دهنده توانایی ما در ورود به صنایع مختلف با درک عمیق از مخاطب و مسیر فروش است.</p>
+            <div class="cp-project-tags"><span>Coffee</span><span>Digital</span><span>Content</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۱۱</span>
+            <span class="cp-project-type">PERSONAL BRAND</span>
+            <h4>سایت اختصاصی آریا شاهبداغی</h4>
+            <p>طراحی و توسعه وب‌سایت اختصاصی برای برند شخصی آریا شاهبداغی با معماری محتوایی منحصربه‌فرد، نمایش مدارک بین‌المللی، معرفی خدمات تخصصی و پنل مدیریت فوق‌کاربردی.</p>
+            <div class="cp-project-tags"><span>Website</span><span>Personal Brand</span><span>Panel</span></div>
+        </article>
+        <article class="cp-project">
+            <span class="cp-project-num">۱۲</span>
+            <span class="cp-project-type">REAL ESTATE + AI</span>
+            <h4>املاک پازل فرشته</h4>
+            <p>طراحی وب‌سایت اختصاصی املاک در کنار پیاده‌سازی اتوماسیون هوشمند و لایه هوش مصنوعی برای مدیریت خودکار آگهی‌ها، پاسخ‌گویی لحظه‌ای به متقاضیان و پیگیری هوشمند لیدهای خرید و اجاره.</p>
+            <div class="cp-project-tags"><span>Website</span><span>AI</span><span>Automation</span><span>Real Estate</span></div>
+        </article>
+    </div>
+
+    <div class="cp-note">
+        <p>
+            هر یک از این پروژه‌ها نشان‌دهنده توانایی ما در ترکیب تخصص‌های مختلف است — از طراحی و توسعه تا هوش مصنوعی و اتوماسیون —
+            برای خلق یک سیستم یکپارچه که دقیقاً همان چیزی است که <strong>اتومبیل صمد شکرالهی</strong> به آن نیاز دارد.
+        </p>
+    </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+    <div class="final-content">
+        <h2>بیشتر بفروش، هوشمندانه قیمت‌گذاری کن، <span class="accent">سریع‌تر پاسخ بده</span></h2>
+        <p>
+            اتومبیل صمد شکرالهی با این پلتفرم نه تنها فروش، کارشناسی و خدمات خود را سیستماتیک و مقیاس‌پذیر می‌کند، بلکه با موتور قیمت‌گذاری هوشمند، AI Car Finder،
+            CRM و اتوماسیون چندکاناله، به یک مجموعه دیجیتال، متصل و داده‌محور تبدیل می‌شود.
+            ما در Code Packs آماده‌ایم تا این تحول را برای اتومبیل صمد شکرالهی طراحی و پیاده‌سازی کنیم.
+        </p>
+        <button id="contactBtn" class="cta-button">
+            ارتباط با Code Packs
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg>
+        </button>
+        <div class="cta-tags">
+            <span>AI Pricing Engine</span>
+            <span>AI Car Finder</span>
+            <span>AI Custom Agent</span>
+            <span>Online Inspection</span>
+            <span>Installment Platform</span>
+            <span>Smart CRM</span>
+            <span>Multi-Channel Publishing</span>
+            <span>BI &amp; Market Analytics</span>
+            <span>Full Ownership</span>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-kavian">
+        <svg viewBox="0 0 120 120" fill="none" aria-label="اتومبیل صمد شکرالهی">
+            <path d="M10 42 Q30 8 68 18 Q92 24 108 48 L96 52 Q82 30 60 26 Q34 22 20 48 Z" fill="var(--brand-blue)"/>
+            <path d="M14 55 Q36 30 66 38" stroke="var(--brand-blue)" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.7"/>
+            <path d="M18 78 Q22 68 34 66 L42 60 L70 60 L80 68 Q94 68 100 78 L100 88 L92 88 Q92 96 84 96 Q76 96 76 88 L42 88 Q42 96 34 96 Q26 96 26 88 L18 88 Z" fill="var(--brand-red)"/>
+            <path d="M46 64 L58 64 L58 74 L44 74 Z M62 64 L74 64 L76 74 L62 74 Z" fill="#FFFFFF" opacity="0.85"/>
+            <circle cx="35" cy="88" r="8" fill="var(--brand-blue-deep)"/>
+            <circle cx="35" cy="88" r="3.5" fill="#FFFFFF"/>
+            <circle cx="83" cy="88" r="8" fill="var(--brand-blue-deep)"/>
+            <circle cx="83" cy="88" r="3.5" fill="#FFFFFF"/>
+        </svg>
+        اتومبیل صمد شکرالهی
+    </div>
+    <strong>Code Packs — Intelligent Digital Solutions</strong>
+    <p>پروپوزال اختصاصی طراحی و توسعه پلتفرم هوشمند خودرو برای اتومبیل صمد شکرالهی</p>
+    <p class="footer-slogan">Smart Solutions, Better Business</p>
+</footer>
+
+</main>
+
+<!-- CONTACT MODAL -->
+<div class="contact-modal" id="contactModal">
+    <div class="contact-modal-overlay" id="modalOverlay"></div>
+    <div class="contact-modal-box">
+        <button class="modal-close" id="modalClose" aria-label="بستن">×</button>
+        <h3>ارتباط با Code Packs</h3>
+        <p>یکی از راه‌های زیر را انتخاب کنید</p>
+        <div class="contact-options">
+            <a href="https://wa.me/989009999237" target="_blank" rel="noopener" class="contact-option">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></span>
+                <span>واتساپ</span>
+                <small>+989009999237</small>
+            </a>
+            <a href="https://ble.ir/codepacksteam" target="_blank" rel="noopener" class="contact-option">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg></span>
+                <span>بله</span>
+                <small>ble.ir/codepacksteam</small>
+            </a>
+            <a href="tel:09009999237" class="contact-option">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg></span>
+                <span>تماس مستقیم</span>
+                <small>09009999237</small>
+            </a>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    "use strict";
+
+    const html = document.documentElement;
+    const themeToggle = document.getElementById("themeToggle");
+    const STORAGE_KEY = "samad-auto-theme";
+
+    function applyTheme(theme) {
+        html.setAttribute("data-theme", theme);
+        const metaTheme = document.querySelector('meta[name="theme-color"]');
+        if (metaTheme) {
+            metaTheme.setAttribute("content", theme === "dark" ? "#0A1220" : "#F5F7FA");
+        }
+    }
+
+    /* پیش‌فرض: LIGHT ☀️ */
+    function getPreferredTheme() {
+        const saved = localStorage.getItem(STORAGE_KEY);
+        if (saved === "light" || saved === "dark") return saved;
+        return "light";
+    }
+
+    applyTheme(getPreferredTheme());
+
+    themeToggle.addEventListener("click", function() {
+        const next = html.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(next);
+        try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+    });
+
+    const header = document.getElementById("siteHeader");
+    const hamburger = document.getElementById("hamburger");
+    const mobileOverlay = document.getElementById("mobileOverlay");
+    const mobilePanel = mobileOverlay.querySelector(".mobile-panel");
+    const mobileLinks = mobilePanel.querySelectorAll("a");
+    const toc = document.getElementById("toc");
+    const tocHeader = document.getElementById("tocHeader");
+    const tocButton = document.getElementById("tocButton");
+    const sections = document.querySelectorAll(".section");
+    const allNavLinks = document.querySelectorAll(".toc-links a, .mobile-panel a");
+    const backTop = document.getElementById("backTop");
+    const contactBtn = document.getElementById("contactBtn");
+    const contactModal = document.getElementById("contactModal");
+    const modalOverlay = document.getElementById("modalOverlay");
+    const modalClose = document.getElementById("modalClose");
+
+    function openMenu() {
+        mobileOverlay.classList.add("active");
+        hamburger.classList.add("active");
+        document.body.classList.add("menu-open");
+    }
+    function closeMenu() {
+        mobileOverlay.classList.remove("active");
+        hamburger.classList.remove("active");
+        if (!contactModal.classList.contains("active")) {
+            document.body.classList.remove("menu-open");
+        }
+    }
+    hamburger.addEventListener("click", function() {
+        mobileOverlay.classList.contains("active") ? closeMenu() : openMenu();
+    });
+    mobileOverlay.addEventListener("click", function(e) {
+        if (e.target === mobileOverlay) closeMenu();
+    });
+    mobileLinks.forEach(function(link) { link.addEventListener("click", closeMenu); });
+
+    document.addEventListener("keydown", function(e) {
+        if (e.key === "Escape") {
+            closeMenu();
+            if (contactModal.classList.contains("active")) closeModal();
+        }
+    });
+
+    tocHeader.addEventListener("click", function() {
+        toc.classList.toggle("collapsed");
+    });
+    tocButton.addEventListener("click", function() {
+        toc.classList.remove("collapsed");
+        toc.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("visible");
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.06, rootMargin: "0px 0px -50px 0px" });
+    sections.forEach(function(section) { revealObserver.observe(section); });
+
+    const cards = document.querySelectorAll(".section:not(.cp-showcase) .card");
+    cards.forEach(function(card) {
+        card.setAttribute("role", "button");
+        card.setAttribute("tabindex", "0");
+        card.setAttribute("aria-expanded", "false");
+
+        function toggleCard() {
+            const isExpanded = card.classList.toggle("expanded");
+            card.setAttribute("aria-expanded", isExpanded ? "true" : "false");
+        }
+
+        card.addEventListener("click", toggleCard);
+        card.addEventListener("keydown", function(e) {
+            if (e.key === "Enter" || e.key === " " || e.key === "Spacebar") {
+                e.preventDefault();
+                toggleCard();
+            }
+        });
+    });
+
+    function updateActiveSection() {
+        const scrollPosition = window.scrollY + 160;
+        let activeId = "";
+        sections.forEach(function(section) {
+            const top = section.offsetTop;
+            const bottom = top + section.offsetHeight;
+            if (scrollPosition >= top && scrollPosition < bottom) {
+                activeId = section.getAttribute("id");
+            }
+        });
+        allNavLinks.forEach(function(link) {
+            const href = link.getAttribute("href");
+            const linkId = href ? href.replace("#", "") : "";
+            link.classList.toggle("active", linkId === activeId);
+        });
+    }
+
+    let rafId = null;
+    function handleScroll() {
+        if (rafId) return;
+        rafId = requestAnimationFrame(function() {
+            const scrollY = window.scrollY;
+            header.classList.toggle("scrolled", scrollY > 20);
+            backTop.classList.toggle("visible", scrollY > 600);
+            updateActiveSection();
+            rafId = null;
+        });
+    }
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    backTop.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener("click", function(e) {
+            const href = this.getAttribute("href");
+            if (!href || href === "#") return;
+            const target = document.querySelector(href);
+            if (!target) return;
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+    });
+
+    function openModal() {
+        contactModal.classList.add("active");
+        document.body.classList.add("menu-open");
+    }
+    function closeModal() {
+        contactModal.classList.remove("active");
+        if (!mobileOverlay.classList.contains("active")) {
+            document.body.classList.remove("menu-open");
+        }
+    }
+    contactBtn.addEventListener("click", openModal);
+    modalOverlay.addEventListener("click", closeModal);
+    modalClose.addEventListener("click", closeModal);
+    document.querySelectorAll(".contact-option").forEach(function(option) {
+        option.addEventListener("click", function() {
+            setTimeout(closeModal, 150);
+        });
+    });
+
+    /* CHAT DEMO ANIMATION */
+    const chatBody = document.querySelector(".chat-body");
+    const chatWindow = document.querySelector(".chat-window");
+
+    if (chatBody && chatWindow) {
+        const originalBubbles = Array.from(chatBody.children);
+        const messageData = originalBubbles.map(function(el) {
+            const clone = el.cloneNode(true);
+            el.remove();
+            return {
+                type: el.classList.contains("typing") ? "typing" : "bubble",
+                role: el.classList.contains("user") ? "user" : "ai",
+                node: clone
+            };
+        });
+
+        function playConversation() {
+            let i = 0;
+            function next() {
+                if (i >= messageData.length) return;
+                const msg = messageData[i];
+                if (msg.type === "typing") {
+                    chatBody.appendChild(msg.node);
+                    const typingEl = msg.node;
+                    typingEl.scrollIntoView({ behavior: "smooth", block: "end" });
+                    setTimeout(function() {
+                        typingEl.remove();
+                        i++;
+                        next();
+                    }, 1800);
+                } else {
+                    chatBody.appendChild(msg.node);
+                    msg.node.scrollIntoView({ behavior: "smooth", block: "end" });
+                    const delay = msg.role === "user" ? 700 : 1100;
+                    i++;
+                    setTimeout(next, delay);
+                }
+            }
+            next();
+        }
+
+        const chatObserver = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    setTimeout(playConversation, 400);
+                    chatObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        chatObserver.observe(chatWindow);
+    }
+
+    handleScroll();
+})();
+</script>
+
+</body>
+</html>
